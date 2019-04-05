@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<div id="main">
+    <my-header></my-header>
+
+
+</div>
+<template id="list">
+    <header>{{tit}}<span>我们一起</span></header>
+</template>
+<script src="vue.js"></script>
+<!-- <script type="text/x-"></script> -->
+<script>
+    new Vue({
+        el: '#main',
+        components: {
+            myHeader: {
+                template: '#list',
+                data() {
+                    return {
+                        tit: '周游',
+
+                    }
+                }
+            }
+        }
+    })
+</script>
+
+</html>

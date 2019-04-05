@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+
+
+
+<body>
+
+
+    <script>
+        //Es5 继承
+        // function A(name, age) {
+        //     this.name = name;
+        //     this.age = age;
+
+        // }
+        // A.prototype.sayName = function() {
+        //     console.log(this.name)
+        // }
+
+        // function B() {
+        //     A.apply(this, arguments)
+        // }
+        // B.prototype = Object.create(A.prototype)
+        // B.prototype.sayAge = function() {
+        //     console.log(this.age)
+        // }
+        // new A('杨姗', "80").sayAge();
+        // new B('种筱', "60");
+
+
+
+
+
+        //Es6继承
+        class A {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+
+            }
+
+        }
+        // class B extends A {
+        //     constructor(name, age) {
+        //         super(name, age)
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //     ages() {
+        //         console.log(this.age)
+        //     }
+        // }
+
+
+
+        new A({
+            el:
+        })
+        new B()
+    </script>
+</body>
+
+</html>

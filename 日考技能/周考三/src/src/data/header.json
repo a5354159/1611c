@@ -1,0 +1,15 @@
+[{
+    "name": "Today"
+}, {
+    "name": "yesterday"
+}, {
+    "name": "last 7 day"
+}, {
+    "name": "last 30 days"
+}, {
+    "name": "last 90 days"
+}, {
+    "name": "last 365 days"
+}, {
+    "name": "Custom range"
+}]

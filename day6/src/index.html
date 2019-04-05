@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+        
+        .wrap {
+            width: 600px;
+            height: 300px;
+            border: 1px solid #f00;
+            margin: 100px auto;
+            position: relative;
+        }
+        
+        .pic {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .pic img {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            style="z-index:99 ;left:600px"
+        }
+        
+        .small {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 99
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="pic">
+            <img src="img/img1.jpg" alt="">
+            <img src="img/img2.jpg" alt="">
+            <img src="img/img3.jpg" alt="">
+        </div>
+        <div class="small">
+            <div class="left">&lt;</div>
+            <div class="rigt">&gt;</div>
+        </div>
+    </div>
+</body>
+<script src="./js/index.js"></script>
+
+</html>

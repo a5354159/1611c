@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" v-model='val'>
+        <div v-if='val<60'>该学生不及格</div>
+        <div v-else-if='val>=60 && val<80'>该学生良好</div>
+        <div v-else>该学生优秀</div>
+    </div>
+</body>
+<script src="vue.js"></script>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            val: ''
+        }
+    })
+</script>
+
+</html>

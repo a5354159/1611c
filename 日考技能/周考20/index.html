@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="main">
+        <header class="header">
+            <h2>发现</h2>
+            <div>
+                <span></span>
+                <span></span>
+            </div>
+        </header>
+        <section class="section">
+            <div id="list">
+                <li v-for="item in list">
+                    <span>
+                        <i></i>
+                        <b>{{item.tit}}</b>
+                    </span>
+                    <span></span>
+                </li>
+            </div>
+        </section>
+        <footer class="footer">
+            <dl v-for='item in footer'>
+                <dt><img src="{item.img}" alt=""></dt>
+                <dd>{{item.tit}}</dd>
+            </dl>
+        </footer>
+    </div>
+</body>
+
+</html>

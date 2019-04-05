@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .wrap {
+            width: 600px;
+            height: 300px;
+            border: 1px solid #ccc;
+            margin: 200px auto;
+        }
+        
+        .content {
+            height: 200px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        
+        .leftbtn {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ccc;
+            margin-left: 100px;
+            margin-right: 10px;
+        }
+        
+        .pagebtn {
+            display: inline-block;
+        }
+        
+        .pagebtn span {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border: 1px solid #ccc;
+            text-align: center;
+            line-height: 30px;
+            margin: 0 10px;
+        }
+        
+        select {
+            width: 80px;
+        }
+        
+        .rightbtn {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border: 1px solid #ccc;
+        }
+        
+        .active {
+            background: cyan;
+            color: #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul class="content"></ul>
+        <div class="leftbtn">&lt;</div>
+        <select>
+            <!-- <option value=""></option> -->
+        </select>
+        <div class="pagebtn"></div>
+        <div class="rightbtn">></div>
+    </div>
+
+    <script>
+        let data = [];
+        for (let i = 0; i < 25; i++) {
+            data.push({
+                tit: '头条' + (i + 1)
+            })
+        };
+        class Pagenation {
+            constructor(obj) {
+                this.el = obj.el;
+                this.pagenation = obj.pagenation;
+                this.data = obj.data;
+                this.wrap = this.getBox(this.el);
+                this.leftbth = this.getBox('.leftbtn', this.wrap)
+                this.select = this.getBox('select', this.wrap)
+                this.rightbtn = this.getBox('.rightbtn', this.wrap)
+                this.content = this.getBox('.content', this.wrap)
+                this.pagebtn = this.getBox('.pagebtn', this.wrap)
+                this.init();
+                this.rightbtnClick();
+                this.leftbtnClick();
+                this.pagebtnClick();
+                this.selectChange();
+            }
+            init() {
+                this.pageSize = this.pagenation[0];
+                this.pageNum = 0;
+                this.creatpageBtn();
+                this.creatSelect();
+                this.creatList();
+            }
+            creatList() {
+                let start = this.pageNum * this.pageSize;
+                let end = start + this.pageSize * 1;
+                let data = this.data.slice(start, end);
+                this.content.innerHTML = data.map(item => `<li>${item.tit}</li>`).join('');
+                let btns = Array.from(this.pagebtn.children);
+                btns.forEach((item, index) => {
+                    index === this.pageNum ? item.classList.add('active') : item.classList.remove('active')
+                })
+            }
+            creatpageBtn() {
+                this.size = Math.ceil(this.data.length / this.pageSize);
+                this.pagebtn.innerHTML = '';
+                for (let i = 0; i < this.size; i++) {
+                    let span = document.createElement('span');
+                    span.innerHTML = i + 1;
+                    this.pagebtn.append(span)
+                }
+            }
+
+            creatSelect() {
+                this.select.innerHTML = this.pagenation.map(item => `<option value='${item}'>一页${item}条</option>`).join('')
+            }
+            getBox(dom, parent = document) {
+                return typeof dom === 'string' ? parent.querySelector(dom) : dom
+            }
+
+            selectChange() {
+                this.select.onchange = () => {
+                    this.pageNum = 0;
+                    this.pageSize = this.select.value;
+                    this.creatpageBtn();
+                    this.creatList();
+                    this.pagebtnClick()
+                }
+            }
+            rightbtnClick() {
+                this.rightbtn.onclick = () => {
+                    this.pageNum++;
+                    this.pageNum > this.size - 1 ? this.pageNum = this.size - 1 : this.pageNum
+                    this.creatList()
+                }
+            }
+            leftbtnClick() {
+                this.leftbth.onclick = () => {
+                    this.pageNum--;
+                    this.pageNum <= 0 ? this.pageNum = 0 : this.pageNum;
+                    this.creatList()
+                }
+            }
+            pagebtnClick() {
+                Array.from(this.pagebtn.children).forEach(item => {
+                    item.onclick = () => {
+                        this.pageNum = item.innerHTML - 1;
+                        this.creatList()
+                    }
+                })
+            }
+
+        }
+
+        new Pagenation({
+            el: '.wrap',
+            pagenation: [5, 10, 15, 20],
+            data
+        })
+    </script>
+</body>
+
+</html>

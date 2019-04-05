@@ -1,0 +1,23 @@
+{
+    "name": "webpackAPI",
+    "version": "1.0.0",
+    "description": "",
+    "main": "webpack.config.js",
+    "scripts": {
+        "bulid": "webpack --config webpack.config.js --mode=production"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@babel/core": "^7.3.4",
+        "babel-loader": "^8.0.5",
+        "node-sass": "^4.11.0",
+        "sass-loader": "^7.1.0"
+    },
+    "devDependencies": {
+        "css-loader": "^2.1.1",
+        "style-loader": "^0.23.1",
+        "url-loader": "^1.1.2"
+    }
+}

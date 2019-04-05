@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul> -->
+    {{style}}
+    <script src="./ajax.js"></script>
+    <script>
+        // let [a, b, c, d] = [1, 2, 3]
+        // console.log(d)
+        // let [a, b, c] = ['sds', {
+        //         'abn': 'sss'
+        //     },
+        //     [10, 20, 30]
+        // ]
+        // console.log(c);
+        // let [a, ...b, c] = [...document.querySelectorAll('#list>li')]
+        // console.log(c)
+        // let {
+        //     name,
+        //     age,
+        //     sex: sex = '女'
+        // } = {
+        //     name: '张三',
+        //     age: 18,
+        //     sex: '男'
+        // }
+
+        // console.log(name, age, sex)
+
+        // let [a, b] = [15, 30];
+        // [a, b] = [b, a]
+        // console.log(a, b);
+        // let a = createFn({
+        //     tarName: 'div',
+        //     props: {
+        //         class: 'box',
+        //         style: 'height:100%;border:1px solid #ccc;'
+        //     },
+        //     children: {
+        //         tarName: 'p',
+        //         props: {
+        //             class: 'content',
+        //             style: 'height:100%;width:100%;'
+        //         },
+        //         children: 'hello'
+        //     }
+        // });
+
+        // function createFn(obj) {
+        //     let {
+        //         tarName,
+        //         props,
+        //         children
+        //     } = obj
+        //     let ele = document.createElement(tarName);
+        //     if (props) {
+        //         for (let i in props) {
+        //             ele.setAttribute(i, props[i])
+        //         }
+        //     }
+        //     if (typeof children === 'object') {
+        //         ele.appendChild(createFn(children))
+        //     } else {
+        //         ele.innerHTML = children
+        //     }
+        //     console.log(ele)
+        //     return ele
+        // }
+
+        // document.body.innerHTML = a;
+        // let arr = [{
+        //     name: '张三',
+        //     age: 18,
+        //     id: 1
+        // }, {
+        //     name: '王五',
+        //     age: 20,
+        //     id: 2
+        // }]
+
+        // let name = '张三';
+
+        // let reName = arr.find(function(item) {
+        //     return item.name === name
+        // })
+        // console.log(reName);
+
+
+        // let arr = ['周一', '周二', '周三', '周四', '周五', '周六'];
+        // console.log(arr.copyWithin(3, -2, -1)) ["周一", "周二", "周三", "周五", "周五", "周六"];
+        // console.log(arr.copyWithin(4, 1))["周一", "周二", "周三", "周四", "周二", "周三"]
+        // <!-- 
+        //         let arr = ['周一', '周二', '周三', '周四', '周五', '周六'];
+
+        //         let seat = new Set(arr);
+        //         let keys = [...seat];
+        //         console.log(keys) -->
+        // for (let i of keys) {
+        //     console.log(i)
+        // }
+
+        // let arr = [3, 7, 8, 15, 19]
+        // let sum = arr.reduce((a, b) => a * b)
+        // console.log(sum)
+        // function Images(obj) {
+        //     return new Promise((res, rej) => {
+        //         let img = new Image();
+        //         img.onload = () => {
+        //             res(img)
+        //         }
+        //         img.onerror = () => {
+        //             rej(new Error('很抱歉,没有找到该图片'))
+        //         }
+        //         img.src = obj.url
+        //     })
+        // }
+
+        // Images({
+        //     url: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1824640256.jpg'
+        // }).then((img) => {
+        //     console.log(img)
+        //     document.body.appendChild(img)
+        // }, (err) => {
+        //     console.log(err)
+        // })
+        // let arr = [{
+        //     url: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1824640256.jpg'
+        // }, {
+        //     url: 'https://ss2.bdstatic.com/8_V1bjqh_Q23odCf/pacific/1824640256.jpg'
+        // }];
+        // let imgs = arr.map((item) => {
+        //     // console.log(Images(item))
+        //     return Images(item)
+        // })
+        // Promise.all(imgs).then((res) => {
+        //     res.map((item) => {
+        //         document.body.appendChild(item)
+        //     })
+        // })
+        // let time = (n) => {
+        //     return new Promise((res, rej) => {
+        //         setTimeout(() => {
+        //             res(n)
+        //         }, n)
+        //     })
+
+        // }
+
+        // let timers = async function() {
+        //     let t1 = await time(20);
+        //     let t2 = await time(10);
+        //     let t3 = await time(30);
+        //     let t4 = await time(50);
+
+        //     return {
+        //         t1: t1,
+        //         t2: t2,
+        //         t3: t3,
+        //         t4: t4
+        //     }
+        // }
+        // timers().then((res) => {
+        //     console.log(res)
+        // })
+        // let datas = async function() {
+        //     let page = await ajax('./page.json')
+        //     let data = await ajax('./data.json')
+        //     let age = await ajax('./age.json');
+        //     return {
+        //         page: page,
+        //         data: data,
+        //         age: age
+        //     }
+        // }
+        // datas().then((res) => {
+        //     console.log(res)
+        // })
+    </script>
+</body>
+
+</html>

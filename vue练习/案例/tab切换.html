@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="tit"></div>
+        <div class="content"></div>
+    </div>
+</body>
+<script>
+    class Tabel {
+        constructor(obj) {
+            this.obj = obj;
+            this.data = obj.data;
+            this.el = obj.el;
+            this.wrap = this.creatBox(this.el);
+            this.tit = this.creatBox('.tit', this.wrap)
+            this.cont = this.creatBox('.content', this.wrap)
+            console.log(this.wrap, this.tit, this.cont)
+            this.init();
+
+        }
+        init() {
+            this.createNav()
+        }
+        createNav() {
+            Object.keys(this.data).forEach((item, index) => {
+                let btn = this.creatElemt('button', {
+                    style: 'width:100px;height:100px;background:skyblue;margin:0 5px'
+                }, item);
+                this.tit.append(btn);
+                btn.onclick = () => {
+                    this.cont.innerHTML = this.data[btn.innerHTML].map(text => `<p>${text.name}</p>`).join('')
+                }
+            })
+        }
+        creatElemt(dom, style, text = 'hello') {
+            let ele = document.createElement(dom);
+            Object.entries(style).map(item => ele.setAttribute(item[0], item[1]));
+            // console.log(ele)
+            ele.innerHTML = text;
+            return ele
+        }
+        creatBox(el, parent = document) {
+            return typeof el === 'string' ? parent.querySelector(el) : el
+        }
+
+    }
+    new Tabel({
+        el: '.wrap',
+        data: {
+            '1611A': [{
+                name: '小张'
+            }, {
+                name: '小美'
+            }],
+            '1611B': [{
+                name: '小珊'
+            }, {
+                name: '小王'
+            }],
+            '1613B': [{
+                name: '奈何'
+            }, {
+                name: '微微'
+            }]
+        }
+    })
+</script>
+
+</html>

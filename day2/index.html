@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <ul data-attr='0'>
+            <li data-attr='1'>1</li>
+            <li data-attr='2'>2</li>
+            <li data-attr='3'>3</li>
+            <li data-attr='4'>4</li>
+            <li data-attr='5'>5</li>
+            <li data-attr='6'>6</li>
+            <li data-attr='7'>7</li>
+            <li data-attr='8'>8</li>
+        </ul>
+    </div>
+    <script>
+        console.log(getdom('data-attr'))
+
+        function getdom(attr) {
+            console.log(document.querySelectorAll(document.body(attr)))
+            return [...document.querySelectorAll(attr)]
+        }
+    </script>
+</body>
+
+</html>
