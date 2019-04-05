@@ -1,0 +1,397 @@
+1、let a=2;
+{
+  var a = 10;
+}；
+
+console.log(a)
+
+执行上面代码,得到的结果"
+  正确答案：D
+
+A.undefined  
+ 	
+B.null   	
+
+C.1	
+
+D.报错	
+
+2、var a = [];
+      
+
+var i;
+
+
+
+      for ( let i= 0; i < 10; i++) {
+   
+ 
+              console.log(i)
+ 
+ 
+              let i=1
+ 
+ 
+              a[i] = function () {
+    
+   
+  
+	   console.log(i);
+  
+ 
+ 
+              };
+ 
+
+
+      }
+
+
+
+a[1]();结果为多少（）
+  正确答案：A
+
+A.Uncaught ReferenceError: i is not defined	
+
+B.5	
+
+C.6	
+
+D.undefined
+
+3、var aa=1
+   console.log(aa); 
+   let aa = 2;	
+   正确答案：B
+
+A.以下都不对
+
+B.Identifier 'aa' has already been declared
+
+C.null
+
+D.2
+
+4、let tmp=1
+switch (true) {
+    case true :{
+  
+     let tmp;
+ tmp = 'abc';
+     console.log(tmp)
+    }
+    
+ }
+  正确答案：A
+
+A.abc	
+
+B.ReferenceError	
+
+C.1	
+
+D.null
+
+5、var b=1;
+ function fn(){
+   let a=2
+   return function(){
+ console.log(b) 
+   } 
+   let b=3
+ }
+ fn()()
+   正确答案：B
+
+A.1	
+
+B.b is not defined	
+
+C.3	
+
+D.2
+
+6.var b=1;
+
+  function fn(){
+  
+    let a=1
+  
+    return function(){
+ 
+       console.log(b) 
+  
+    } 
+  
+}
+  
+fn()()
+ 正确答案：A
+
+A.1
+
+B.报错	
+
+C.2	
+
+D.undefined
+
+7.const arr=[1,2,3,4,5]
+ arr.sort(function(a,b){
+     return a-b
+ })
+   console.log(arr[1])
+ 正确答案：A
+
+A.2
+
+B.undefined
+
+C.Identifier 'arr' has already been declared
+
+D.""
+
+8.var a = 1;
+   console.log(window.a)：
+  正确答案：C
+
+A.undefined
+
+B.null
+
+C.1
+
+D.报错
+
+9.下面数组的解构使用默认值的是（）
+正确答案：BD
+
+A.let [y=0,x]=[null,null]
+
+B.let [y = 'b',x=1] = ['a'];
+
+C.let [y = 'b',x] = ['a', undefined];
+
+D.let [y=0,x]=[undefined,""]
+
+10.关于下面对象解构中会报错的是(    )
+正确答案：AD
+
+A."var foo;{ foo: foo } = { foo: 1 };"
+
+B.({} = [true, false])
+
+C.({} = 'abc')
+
+D.{} = []
+
+11.location 表示当用户浏览网页时，浏览器保存了一个最近所访问网页的url列表。
+正确答案：B
+
+A 对	B 错
+
+12.let [x, y, ...z] = ['a'];执行代码的结果为x='a';y=undefined;z=[]
+正确答案：A
+	
+A 对	B 错
+
+13.wangzhan'.padStart(2, 'ab')结果为'abwangzhan'
+正确答案：B
+
+A 对	B 错
+
+14.bw'.repeat('3')执行结果为'bwbwbw'
+正确答案：A
+
+A 对	B 错
+
+15.数组的解构可以在等号的右边写对象格式；
+正确答案：B
+
+A 对	B 错
+
+16.let [x,...y] = [1, 2, 3];执行代码的结果为
+正确答案：x=1，y=[2,3]
+
+17.es5中改变函数this时，常用的方法有
+正确答案：call,apply,bind
+
+18.前端存储包含哪些？
+正确答案：cookie,本地存储，indexdb等
+
+19.var { x = 3 } = { x: undefined };x值为
+正确答案：3
+
+20.同源策略的含义：
+正确答案：同域名，同协议，同端口
+
+
+21.bawei'.repeat(-0.9)的返回值为         
+正确答案：B
+
+A.“bawei”
+
+B.""
+
+C."baweibawei"
+
+D.以上都不对
+
+
+22."let [head, a, ...tail] = [1, 2, 3, 4];
+     console.log(tail)：
+  打印的正确结果是       
+	知识点：es6中的变量定义；源于：练习手册第1单元"
+正确答案：D
+
+A.[3]
+
+B.3
+
+C.4
+
+D.[3,4]
+
+23.对象解构时，要解构的值是否为等于undefined，内部使用的是（）运算符           
+	知识点：es6中的对象解构；源于：自出
+正确答案：A
+
+A."==="
+
+B."=="
+
+C."||"
+
+D."&&"
+
+24."const a=1
+      a=2;
+  console.log(a)
+
+执行上述代码的结果是          
+	知识点：es6中的变量定义；源于：练习手册第1单元"
+正确答案：D
+
+A.1
+
+B.2
+
+C.undefined
+
+D.报错
+
+25.在es的数组解构过程中，等式的右边不可以有的数据类型是          
+	知识点：es6中的对象解构；源于：自出
+正确答案：D
+
+A.字符串
+
+B.数组
+
+C.arguments
+
+D. { }
+
+26.关于const说法错误的有           知识点：es6中的对象解构；源于：自出
+正确答案：C
+
+A.监听的是内存地址,对于基本类型的数据不可改变
+
+B.监听的是内存地址,引用类型可以改变对象的内部值
+
+C."所有定义的数据类型都不可以再做任何改变
+"
+
+D.以上说法都不正确
+
+27.关于es6中作用域的说法正确的是            知识点：es6中的对象解构；源于：自出
+正确答案：C
+
+A.es6中，在全局使用let定义的变量，可以通过window进行访问
+
+B.es6中，在函数内部使用let定义的变量，可以通过window进行访问
+
+C.es6中，let、const定义变量时，将全局作用域和顶层作用域做了分离
+
+D.以上说法都不正确
+
+28."if (true) {
+    tmp = 'abc'; 
+    let tmp;
+    console.log(tmp)
+}
+
+执行上述代码，结果是    
+	知识点：es6中的变量定义；源于：练习手册第1单元"
+正确答案：A
+
+A.报错ReferenceError
+
+B.abc
+
+C.undefined
+
+D.都不正确
+
+29."下面关于对象解构会使用默认值的有(      )：
+
+正确答案：CD
+
+A.let { baz: aa, zoo: { hh } } = { baz: 'baz', zoo: null };
+
+B.var { x = 3 } = { x: null };
+
+C.var { x = 3 } = { x: undefined };
+
+D.var { x = 3 } = {};
+
+30.apply, call和bind有什么区别？
+正确答案：AB
+
+A.三者都可以把一个函数应用到其他对象上；
+
+B.apply,call是直接执行函数调用
+
+C.bind 是直接执行函数调用
+
+D.apply和call的区别是call接受数组作为参数；
+
+31.对象解构与赋值 是为一体的
+正确答案：A
+
+A 对	B 错
+
+32.对象解构时，可以先定义变量，再给变量进行赋值
+正确答案：B
+
+A 对	B 错
+
+33.在es6的模板字符串中插入变量可以使用${}方式；          知识点：es6中的对象解构；源于：自出
+正确答案：A
+
+A 对	B 错
+
+34.es6中数组的解构可以在等号的左边写对象格式；           知识点：es6中的对象解构；源于：自出
+正确答案：B
+
+A 对	B 错
+
+35.es6中对象解构时等号左边可以为数组            知识点：es6中的对象解构；源于：自出
+正确答案：A
+
+A 对	B 错
+
+36.使用（）方法是会修改原字符串的。
+正确答案：replace
+
+37.git是一个（）工具；
+正确答案：代码管理工具（版本控制系统）
+
+38.数组的遍历方法中，写出两个有返回数组的方法
+正确答案：map，filter
+
+39.常用的正则检测（验证）方法是
+正确答案：test
+
+40.查找在字符串中某个字符的索引的方法是
+正确答案：indexof

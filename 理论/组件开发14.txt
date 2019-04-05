@@ -1,0 +1,226 @@
+在vue的组件根元素上监听原生事件，使用的修饰符自定义事件
+
+在vue组件中对传入的props的属性值进行校验时：对象
+
+通过vue组件实例的哪个属性来获取根实例$root
+
+渲染结果为：
+<div class=""container"">
+  <header>
+    <h1>这里可能是一个页面标题</h1>
+  </header>
+  <main>
+    <p>主要内容的一个段落。</p>
+    <p>另一个主要段落。</p>
+  </main>
+  <footer>
+    <p>这里有一些联系信息</p>
+  </footer>
+</div>
+
+父组件为：
+<app-layout>
+  <h1 slot=""header"">这里可能是一个页面标题</h1>
+
+  <p>主要内容的一个段落。</p>
+  <p>另一个主要段落。</p>
+
+  <p slot=""footer"">这里有一些联系信息</p>
+</app-layout>
+
+用代码来实现一个子组件：
+正确答案：
+<div class=""container"">
+  <header>
+    <slot name=""header""></slot>
+  </header>
+  <main>
+    <slot></slot>
+  </main>
+  <footer>
+    <slot name=""footer""></slot>
+  </footer>
+</div>
+
+
+Vue.component('child', {
+  template: '<span>{{ message }}</span>'
+})
+在使用child的时候传入一个属性message，子组件必须对传入的message进行字符串或数值的验证，补全上述代码
+正确答案：
+props: {
+    message:[String,Number]
+ }
+
+在vue中子组件跟父组件之间进行通讯使用的方式有：自定义事件/props回掉函数/全局事件等
+
+在vue的组件根元素上监听原生事件，使用的修饰符知识点：.native
+
+在vue中，哪个属性可以直接获取子组件知识点：$refs
+
+vue中的 JavaScript 标签里使用 （）类型，text/x-template 
+
+在vue中的组件是否可以进行异步加载知识点：是
+
+在vue中一般借助什么插件建立一个全局的vue对象来实现组件间通讯：	
+指令	
+路由	
+bus	
+都不对			
+C
+
+如果在开发过程，我们想要在父组件中定义子组件的一些dom结构，我们应该使用组件的（）技术	
+动态组件	
+指令	
+内容分发	
+都不对			
+C
+
+在使用内容分发技术时，我们利用什么属性进行作用域的封闭	
+slot-scope	
+slot	
+scope	
+都不对			
+A
+
+下面vue组件，结合实例编译后input属性为number的是	
+<input-c @type="number" ></input-c>	
+<input-c :type="number" ></input-c>	
+<input-c type="{{number}}" ></input-c>	
+<input-c type="number" ></input-c>			
+D
+
+使用的修饰符时,在vue的组件根元素上监听原生事件的有	
+.native	
+.self	
+.prevent	
+.stop			
+A
+
+关于vue中的$emit方法派发的事件说法正确的是：	
+只可以在子组件中接受到事件	
+可以在子组件和父组件中接受到事件	
+可以在子组件和自身组件中接受到事件	
+可以在自身组件中接受到事件			
+B
+
+通过哪个属性可以直接获取子组件：	
+$ref	
+$refs	
+ref	
+v-ref
+B
+
+vue中进行异步加载组件的写法正确的是：	 
+my-component': () => import('./my-async-component')	
+my-component': require(['./my-async-component'], reject)	
+my-component': import(['./my-async-component'], resolve)	
+my-component': require('./my-async-component')			
+A
+
+
+
+在vue的组件中，当组件中包含大量静态内容时，可以考虑使用 （） 将渲染结果缓存起来知识点：vue组件；来源：练习手册第14单元"	
+v-once	
+v-html	
+v-text	
+v-on			
+A
+
+在vue中，有一种东西叫做内容分发，说法正确是知识点：vue组件；来源：练习手册第14单元"	
+提供一种混合父组件内容与子组件自己模板的方式	
+提供了一种子组件内容和父组件模板的机制	
+实现了子组件和父组件互为模板的机制	
+都不对			
+A
+
+在动态组件中有个属性或者标签，可以将切换出去的组件保留在内存中  知识点：vue组件；来源：练习手册第14单元"	
+keep	
+alive	
+keep-alive	
+online			
+C
+
+在vue中,下面vue组件，结合实例编译后input属性为number的是   知识点：vue组件；来源：练习手册第14单元"	
+<input-c @type="number" ></input-c>	
+<input-c :type="number" ></input-c>	
+<input-c type="{{number}}" ></input-c>	
+<input-c type="number" ></input-c>			
+D
+
+在vue中,关于vue中组件间通信说法正确的有 知识点：vue组件；来源：练习手册第14单元"	
+只有父组件改变子组件的数据	
+只有子组件改变父组件的数据	
+父组件与子组件通讯可以用prop进行传递，子组件和父组件通信可以用事	
+兄弟组件之间无法进行通讯			
+C
+
+关于vue中的$emit方法派发的事件说法正确的是  知识点：vue组件；来源：网络"	
+只可以在子组件中接受到事件	
+可以在子组件和父组件中接受到事件	
+可以在子组件和自身组件中接受到事件	
+可以在自身组件中接受到事件			
+B
+
+在vue中子组件跟父组件之间进行通讯使用  知识点：vue组件；来源：练习手册第14单元"	
+自定义事件	
+原生事件	
+props	
+broadcast			
+A
+
+关于vue注册组件时，可以使用的写法：   知识点：vue组件；来源：练习手册第14单元	
+kebab-case	
+camelCase	
+Pascal-Case	
+PascalCase			
+ABD
+
+在vue中对于传入组件内部的数据进行更改时使用方式有     知识点：vue组件；来源：网络	
+在data中重新将值赋给另外一个属性	
+直接在mounted钩子函数中将其赋给另外一个属性	
+直接对props传入的值进行改变	
+在computed中动态的赋给另外一个属性			
+AD
+
+关于内容分发说法不正确的是	
+父组件中无法获取子组件的数据	
+将子组件中无法获取父组件的数据	
+提供一种混合父组件内容与子组件自己模板的方式	
+无法同时定义多个slot			
+ABD
+
+关于vue注册组件时，可以使用的写法	
+kebab-case	
+camelCase	
+Pascal-Case	
+PascalCase			
+ABD
+
+关于vue组件通讯中$parent:父组件实例
+A
+
+在vue中对于传入组件内部的数据进行更改时使用方式有在computed中动态的赋给另外一个属性	
+A
+
+在vue中的组件无法进行异步加载		
+B
+
+当组件中包含大量静态内容时，可以考虑使用 v-once 将渲染结果缓存起来
+A
+
+在vue中如果对props做验证，props的属性值格式必须为数组格式
+B
+
+
+在vue中的keep-alive标签可以将切换出去的组件保留在内存中，避免重新 渲染   知识点：vue组件；来源：网络"	
+A
+
+在vue中兄弟组件间进行数据的通讯时，需要借助全局的vue对象      知识点：vue组件；来源：练习手册第14单元		
+A
+
+在vue中,关于vue组件通讯中$self是子组件的实例        知识点：vue组件；来源：网络			
+B
+
+$root：组件所在的根实例		
+A

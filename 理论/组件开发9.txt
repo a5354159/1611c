@@ -1,0 +1,222 @@
+
+
+"<div id=""app"">
+        <span>{{name}}</span>
+        
+ </div>
+<script>
+    var vm = new Vue({
+        el: ""#app"",
+        template: ""<span>{{user.name}}</span>"",
+        data: {
+           
+  name:""zhangsan""
+        }
+       
+    })
+    vm.name=""lisi""
+    
+</script>
+用一段代码获取新的dom节点中的lisi文本节点"
+答案："Vue.nextTick().then(function(){
+console.log(vm.$el.getElementsByTagName(""span"")[0].innerHTML)
+})"
+
+在vue的生命周期，最早可以获取到实例上方法和属性的钩子函数是：created
+
+"如何在vue的beforeCreate函数中获取编译好的节点内容如下：
+
+<div id=""app"">
+        <span>{{name}}</span>
+        
+ </div>
+<script>
+    var vm = new Vue({
+        el: ""#app"",
+        template: ""<span>{{user.name}}</span>"",
+        data: {
+           
+  name:""zhangsan""
+        }，
+ beforeCreate(){
+  
+ }
+       
+    })
+    
+</script>
+
+在beforeCreate中用正确的方法获取dom节点中""zhangsan"""							"
+
+this.$nextTick(()=>{
+      console.log(this.$el.getElementsByTagName(""span"")[0].innerHTML)
+  })"
+
+
+
+
+在vue中的组件构造器是（）Vue.extend()
+
+vue中的v-on的缩写是（）@
+
+如果在vue中编译html，需要使用（）指令v-html
+
+
+
+vue最早可以使用this生命周期	
+
+beforeCreate	
+created	
+beforeDestory	
+都不对			
+B
+
+vue组件在不属于更新时执行的钩子函数：	
+
+beforeUpdate	
+updated	
+mounted	
+都不对			
+D
+
+关于vue说法正确的是
+	
+vue推荐操作真实dom	
+vue使用Virtual Dom	
+vue是一个mvc框架	
+vue无响应式的机制			
+B
+vue实例化时挂载dom节点的属性是
+	
+data	
+init	
+el	
+$el			
+C
+
+在vue实例的生命周期中属于初始化的是	
+beforeCreate	created	mounted	beforeMounted			
+A
+在vue的生命周期中mounted周期属于什么阶段
+	
+实例初始化	
+实例的方法，模板，数据进行创建	
+实例对模板进行编译完成，并插入到真实dom中	
+实例将要开始对于模板进行编译
+			
+C
+下面不属于vue生命周期的钩子函数有
+	
+componentupdated	
+beforeUpdate	
+destroyed              	
+created               			
+A
+
+vue实例对象中有的属性或方法
+	
+$el	
+$gets	
+$sets	
+data;			
+A
+"对vue实例对象改变数据需要使用（）方法知识点：vue基础知识点；来源：练习手册第9单元
+$get	
+$set	
+$add	
+都不对			
+B
+
+"在vue中进行一次性插值，当数据改变时，内容不会更新的指令是（）知识点：vue基础知识点；来源：练习手册第9单元"	
+v-bind	
+v-one	
+v-once	
+都不对			
+C
+
+"最早在vue的哪个生命周期函数中可以获取到定义的方法；知识点：vue基础知识点；来源：练习手册第9单元"	
+componentCreated	
+created	
+beforeCreat	
+都不对			
+B
+
+"如何实例化一个vue项目：知识点：webpack的locader用法；来源：练习手册第8单元
+new Vue（）	
+Vue（）	
+new vue()	
+vue			
+A
+
+"在vue中实例化时挂载dom节点的属性是知识点：vue基础知识点；来源：练习手册第9单元"	
+data	
+init	
+el	
+$el			
+C
+
+"vue中，不属于vue指令的有vue基础知识点；来源：练习手册第9单元"	
+v-bind	
+v-if	
+v-on	
+ng-click			
+D
+
+"在vue中实例的生命周期中属于初始化的是知识点：vue基础知识点；来源：练习手册第9单元"	
+beforeCreate	
+created	
+mounted	
+beforeMounted			
+A
+
+"在vue中的生命周期中mounted周期属于什么阶段vue基础知识点；来源：网络
+实例初始化	
+实例的方法，模板，数据进行创建	
+实例对模板进行编译完成，并插入到真实dom中	 
+实例将要开始对于模板进行编译			
+C
+
+
+在vue中可以输出内容的指令有
+	
+v-bind	
+v-html	
+v-on	
+v-text			
+ABD
+
+关于钩子函数说法正确的是
+	
+在组件实例过程中自执行或添加事件监听的函数，叫做钩子函数；	
+钩子函数为组件整个生命周期提供了操作接口	
+在组件化开发过程中，所有的组件逻辑基本需要在钩子函数中进行	
+以上说法都不正确			
+ABC
+"下面不属于vue生命周期中作用于更新阶段的钩子函数有知识点：vue基础知识点；来源：练习手册第9单元"	
+destroyed              	
+updated	
+created                	
+beforeUpdate			
+AC
+
+"以下vue实例对象中没有的属性或方法知识点：vue基础知识点；来源：练习手册第9单元"	
+$el	
+$set	
+sets	
+data;			
+CD
+
+下面vue的钩子函数中，beforeCreate属于创建实例时就执行的是							B
+通过vue实例的$el属性可以获取到当前实例挂载的dom节点							A
+vue进行文本插值时推荐使用v-html							B
+在vue中用来监听事件的指令是v-on							A
+在vue中@代表v-on的简写							A
+"vue的实例在销毁时，无对应的钩子函数知识点：vue基础知识点；来源：练习手册第9单元B
+
+"vue的数据的渲染是响应式的知识点：vue基础知识点；来源：网络A
+
+"在vue组件卸载时，执行的钩子函数为destroyed  知识点：vue基础知识点；来源：练习手册第9单元"	A
+
+"在vue中输出文本时需要使用的指令是v-html知识点：vue基础知识点；来源：练习手册第9单元"	A
+
+"在vue中关于vue说法vue使用Virtual Dom知识点：vue基础知识点；来源：网络"		A

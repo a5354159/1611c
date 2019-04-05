@@ -1,0 +1,259 @@
+正确的使用vue-router配置一段代码，实现默认路由或者初始路由为“/index”	
+正确答案：
+export default new Router({
+   
+     routes: [{
+            
+         path: '/',
+            
+         redirect: { name: 'Index' },
+                 
+     },{
+            
+         path: '/index',
+            
+         name: 'Index',
+            
+  component: Index
+     }]
+})
+
+正确书写一段代码，实现路由别名的定义，比如/a和/b都可以访问到统一个组件，使用别名的方式定义
+正确答案：
+const router = new VueRouter({
+  routes: [
+    { path: '/a', component: A, alias: '/b' }
+  ]
+})"
+
+正确配置一段代码实现路由的嵌套，比如，/index中嵌套着/index/tab路由	
+正确答案：
+const router = new VueRouter({
+  routes: [
+    { path: '/index', component: Index
+      children: [
+        {
+          path: 'tab',
+          component: Tab
+        }
+      ]
+    }
+  ]
+})
+
+使用动态路由配置一段代码，实现在进入/detail路由时，/detail/1可以实现动态传入数值1；并且通过（）方法获取此值
+正确答案：
+const router = new VueRouter({
+  routes: [
+    // 动态路径参数 以冒号开头
+    { path: '/detail/:id', component: Detail}
+  ]
+})
+this.$route.params.id"
+
+场景：如果我们通过动态路由的方式，每一次改变路由信息时，都是对应渲染的相同的组件，我们想要在每次路由改变时，都打印出“路由更新了”这几个字；用具体代码实现，监听的函数配置；
+正确答案：
+const User = {
+  template: '...',
+  watch: {
+    '$route' (to, from) {
+      // 对路由变化作出响应...
+    }
+  }
+}
+
+在vue-router的哪个组件内部钩子函数中，无法获取到当前组件的this：
+正确答案：beforeRouteUpdate 
+
+vue-router中router-link标签上的（）属性在当前（相对）路径前添加基路径	
+正确答案：append
+
+在vue-router中设置链接激活时使用的css类名的配置是通过（）属性进行配置的	
+正确答案：linkActiveClass
+
+在vue中如果我们实现单页面应用，使用路由插件是：
+正确答案：vue-router
+
+我们在vue中，可以通过什么进行路由对象的访问
+正确答案：this.$router
+
+我们在vue组件的内部，访问每一个路由的对象通过什么属性	
+正确答案：this.$route
+
+在vue中，路由的的信息对象是否会添加到组件的实例上
+正确答案：是
+
+vue-router在实例化，需要传入的路由配置项的格式是：
+正确答案：数组
+ 
+vue-route中的router-link默认的标签是	
+<a></a>	
+<span></span>	
+<href></href>	
+<to></to>			
+A
+
+将的vue-router中的router-link转换为相应标签的属性是	
+to	
+replace	
+tag	
+append			
+C
+关于指令的钩子函数update和componentUpdated说法不正确的是	
+update调用时所在组件的 VNode 更新时调用，但是可能发生在其孩子的 VNode 更新之前	
+componentUpdated是其所在组件的 VNode 及其孩子的 VNode 全部更新时调用	
+update是其所在组件的 VNode 及其孩子的 VNode 全部更新时调用	
+不推荐在update内部进行逻辑的处理			
+C
+
+在vue-router中router-view结合transition和keep-alive使用时；写法正确的是	"
+<keep-alive>
+      <transition>
+     <router-view></router-view>
+      </transition>
+   </keep-alive>"	
+"<router-view>
+      <keep-alive>
+     <transition></transition>
+      </keep-alive>
+   </router-view>"	
+"<transition>
+      <keep-alive>
+     <router-view></router-view>
+      </keep-alive>
+   </transition>"	
+"<transition>
+      <router-view>
+     <keep-alive></keep-alive>
+      </router-view>
+   </transition>"		
+C
+
+在vue的单个路由配置过程中，配置路由路径的属性是	
+path	
+component	
+url	
+都不对			
+A
+
+我们在实例化vue时，可以通过哪个方法直接挂载将实例挂载到节点	
+go	
+run	
+$mount	
+都不对			
+C
+
+下面写法符合动态路由的是：	 
+{ path: '/user/id', component: User }	
+{ path: '/user/:id', component: User }	
+{ path: '/user/？id', component: User }	
+都不对			
+B
+
+如果使用了动态路由后，我们获取动态路由参数时，使用的是：	
+query	
+body	
+params	
+都不对			
+C
+
+如果我们想要获取路由的hash值，该怎么获取	
+this.$hash	
+this.$route.hash	
+this.router.hash	
+都不对			
+B
+
+如果在开发过程出现路由组件复用时，我们该使用方式监听路由信息的变化	
+mounted	
+watch	
+data	
+都不对			
+B
+
+如果进行统一路由刷新，或者使用同一路由时，路由的守卫钩子函数是：	
+Update	
+beforeUpdateRoute	
+beforeRouteUpdate	
+都不对			
+C
+
+我们进行路由使用时，承接组件的出口组件是	
+<view>	
+<router-link>	
+<router-view>	
+都不对			
+C
+
+vue-router的router实例说法不正确的有	
+router.app路由使用模式	
+router.replace(location)：进行路由的替换，不会将上次的路由保存到history中	
+router.replace(location)：进行路由的替换，会将上次的路由保存到history中	
+router.go(n)中的n不能为负数			
+ACD
+
+在vue-router中路由信息对象说法不正确的是	
+$route.path：获取的是hash路径	
+$route.params：获取的是 URL 查询参数	
+$route.params：包含了 动态片段 和 全匹配片段	
+$route.matched：获取的是当前路由信息			
+ABD
+
+vue-router中的to属性的写法正确的有	
+<router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link>	"
+<router-link to=""home"">Home</router-link>
+<router-link :to="{ path: 'register', params:{ plan: 'private' }}">Register</router-link>	
+<router-link :to="{ path: 'register', query: { plan: 'private' }}">Register</router-link>
+ABD
+
+路由信息一般出现的地方有哪些：	
+组件内部的钩子函数中	
+导航的钩子函数中	
+watch监听的$route对象中的（to,from）参数	
+自定义指令中			
+ABC
+
+下面属于$route路由信息对象属性的有	
+path	
+name	
+currentRoute	
+matched			
+ABD
+
+在vue的传参过程中，有几种接受方式	
+params	
+query	
+body	
+都对			
+AB
+
+关于路由说法正确的有哪些：	
+属于单页面应用	
+一般使用hash进行路由的匹配	
+跟服务端有关系	
+都对			
+AB
+
+在vue-router中的router.go(n)：执行浏览器的前进动作,n代表前进的步数，不能为负数	
+B
+
+vue-router中$route.matched得到的是路由数组，不会包括嵌套的路由纪录	
+B
+
+vue-router中router实例的router.replace()方法，不会在history中留下记录
+A
+
+我们在vue的路由中可以匹配正则	
+A
+
+要在嵌套的出口中渲染组件，需要在 VueRouter 的参数中使用 children 配置	
+A
+
+以 / 开头的嵌套路径会被当作根路径
+A
+
+children 配置就是像 routes 配置一样的路由配置{}	
+B
+
+在vue-router中无法实现路由的嵌套
+B

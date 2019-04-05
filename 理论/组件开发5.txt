@@ -1,0 +1,402 @@
+﻿1."class Point {
+  
+}
+console.log(typeof Point.constructor)执行上面代码,得到的结果"
+正确答案：function
+
+2."class B {
+     go(){
+ console.log(this)
+     } 
+  }
+ let b = new B();
+ 
+ var a=b.go;
+a()
+执行上面代码，打印的结果为"
+正确答案：this
+
+3."class Square {
+     constructor(length) {
+
+     }
+
+     methodName() {
+
+     }
+  }
+console.log(Object.values(Square))执行上述代码结果为"
+正确答案：[]
+
+4.书写一段代码实现，class B继承class A的一个fn方法
+正确答案："class A {
+   fn() {
+    console.log('hello world');
+  }
+}
+
+class B extends A {
+}"
+
+5.在es6的class类中的构造函数是（）函数
+正确答案：constructor
+
+6."var a = [];
+var i;
+
+for ( i= 0; i < 10; i++) {
+  
+ a[i] = function () {
+    
+   console.log(i);
+  
+ };
+
+}
+
+a[6]();结果为多少（）"
+正确答案：C
+
+A.6
+
+B.undefined
+
+C.10
+
+10.报错
+
+7."let obj1={
+        a:1
+    }
+    let obj2=Object.assign({},obj1)
+    obj2.a=2
+    console.log(obj1.a)"
+正确答案：B
+
+A.2
+
+B.1
+
+C.undefined
+
+D.null
+
+8."class B {}
+let b = new B();
+console.log(b.constructor === B.prototype.constructor)执行上述代码的结果是： "
+正确答案：C
+
+A.false
+
+B.报错
+
+C.true
+
+D.null
+
+9.为某个对象设置单个描述属性的方法是（）
+正确答案：A
+
+A.Object.defineProperty()
+
+B.Object.values
+
+C.Reflect.ownKeys
+
+D.都不对
+
+10.在es6中可以用（）方法实现对象深拷贝
+正确答案：B
+
+A.Object.defineProperty()
+
+B.Object.assign()
+
+C.Object.values
+
+D.Reflect.ownKeys
+
+11.关于class类说法错误的是
+正确答案：D
+
+A.Class 可以通过extends关键字实现继承
+
+B.子类必须在constructor方法中调用super方法，否则新建实例时会报错
+
+C.先创造父类的实例对象this，然后再用子类的构造函数修改this。
+
+D.子类的构造函数中，具有自己的this对象
+
+12."if (true) {
+    tmp = 'abc'; 
+    let tmp;
+    console.log(tmp)
+}"
+正确答案：B
+
+A.abc
+
+B.ReferenceError
+
+C.undefined
+
+D.null
+
+13.在es6的class类中我们一般方法添加在：
+正确答案：A
+
+A.原型上
+
+B.类上
+
+C.this上
+
+D.都不对
+
+14.关于class类说法正确的是
+正确答案：AD
+
+A.类的内部所有定义的方法，都是不可枚举的
+
+B.类的内部所有定义的方法，都是可枚举的
+
+C.类的所有方法都定义在类的构造函数上面
+
+D.类的所有方法都定义在类的prototype属性上面
+
+15.关于类this指向说法正确有(      )
+正确答案：AB
+
+A.类的方法内部如果含有this，它默认指向类的实例；一旦单独使用该方法很可能报错
+
+B.类原型方法调用原型上的另外方法时，单独调用此方法，无法获取this
+
+C.类原型方法调用原型上的另外方法时，单独调用此方法，可以获取this
+
+D.类中的箭头函数内部具有自己的this对象
+
+16.定义“类”的方法的时候，不需要加上function这个关键字
+正确答案：A
+
+A 对	B 错
+
+17.定义“类”的方法的时候，方法之间不需要逗号分隔，加了会报错。
+正确答案：A
+
+A 对	B 错
+
+18.Object.assign方法只能一次向类添加一个方法；
+正确答案：B
+
+A 对	B 错
+
+19.constructor方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法
+正确答案：A
+
+A 对	B 错
+
+20.类必须可以使用new调用，也可以跟普通构造函数的一样单独执行
+正确答案：B
+
+A 对	B 错
+
+21."实例的属性除非显式定义在其本身（即定义在this对象上），否则都是定义在（）上 原型
+
+22."类必须可以使用（）调用，不可以跟普通构造函数的一样单独执行。new
+
+23."（）方法是类的默认方法，通过new命令生成对象实例时，自动调用该方法。constructor
+
+24."Class 可以通过（）关键字实现继承。extends
+
+25."我们在实现class类的继承时，必须在constructor中执行（），否则报错 super（）
+
+26.如果我想要 var b={} class aa{ constructor(){ return b}} console.log(b==new aa()) 执行这段代码后，打印的结果是？
+正确答案：A
+
+A.TRUE
+
+B.FALSE
+
+C.报错
+
+D.都不对
+
+27.class类的（）方法只能用在子类的构造函数之中，用在其他地方就会报错 
+	知识点：es6中class类；来源：练习手册5单元
+正确答案：B
+
+A.contructor
+
+B.super()
+
+C.没有
+
+D.都不对
+
+28."es6的class类中，
+class Point {
+  
+}
+console.log(typeof Point)
+ 
+执行上面代码,得到的结果 
+知识点：es6中class类；来源：练习手册5单元"
+正确答案：A
+
+A.function
+
+B.null   
+
+C.object
+
+D.class
+
+29."
+class B {
+     go(){
+ console.log(this)
+     }
+  }
+ let b = new B();
+ 
+ b.go()
+
+执行上面代码，对于打印的结果为
+知识点：es6中class类；来源：练习手册5单元"
+正确答案：B
+
+A.B
+
+B.b
+
+C.window
+
+D.go
+
+30."es6中
+class B {}
+let b = new B();
+
+下面判断为true是
+知识点：es6中class类；来源：练习手册5单元"
+正确答案：A
+
+A." b.constructor === B.prototype.constructor "
+
+B.b.__proto__ === B.prototype.constructor 
+
+C.b.__proto__ === B
+
+D.b.prototype === B.__proto__
+
+31."关于es6中，
+class Point {
+     constructor(){
+    
+    }
+  }
+
+  var obj=Object.assign(Point.prototype, {
+    toString(){},
+    toValue(){}
+  });
+知识点：es6中class类；来源：网络"
+正确答案：C
+
+A.Point.prototype=== Point
+
+B.obj.prototype===Point
+
+C.Point.prototype.constructor === Point
+
+D.Point.prototype==obj.prototype
+
+32."在es6中
+class Square {
+     constructor(length) {
+
+     }
+
+     methodName() {
+
+     }
+  }
+   下面哪条语句执行结果不为空数组
+知识点：es6中class类；来源：练习手册5单元"
+正确答案：D
+
+A. Object.entries(Square)
+
+B.Object.values(Square)
+
+C.Object.keys(Square)
+
+D.Object.getOwnPropertyNames(Square.prototype)
+
+33."在es6中，关于class类说法错误的是：
+知识点：es6中class类；来源：网络"
+正确答案：D
+
+A.Class 可以通过extends关键字实现继承
+
+B.子类必须在constructor方法中调用super方法，否则新建实例时会报错
+
+C.先创造父类的实例对象this，然后再用子类的构造函数修改this。
+
+D.子类的构造函数中，具有自己的this对象
+
+34."在es6中，关于class类说法正确的是：
+知识点：es6中class类；来源：练习手册5单元"
+正确答案：AD
+
+A.类的内部所有定义的方法，都是不可枚举的
+
+B.类的内部所有定义的方法，都是可枚举的
+
+C.类的所有方法都定义在类的构造函数上面
+
+D.类的所有方法都定义在类的prototype属性上面
+
+35."在es6中，关于类this指向说法正确有(      )：
+知识点：es6中class类；来源：练习手册5单元"
+正确答案：AB
+
+A.类的方法内部如果含有this，它默认指向类的实例；一旦单独使用该方法很可能报错。
+
+B."类原型方法调用原型上的另外方法时，单独调用此方法，无法获取this"
+
+C.类原型方法调用原型上的另外方法时，单独调用此方法，可以获取this
+
+D. 类中的箭头函数内部具有自己的this对象
+
+36."类的内部所有定义的方法，都是不可枚举的
+   知识点：es6中class类；来源：自出"
+正确答案：A
+
+A 对	B 错
+
+37."类的数据类型就是函数，类本身就指向构造函数
+   知识点：es6中class类；来源：自出"
+正确答案：A
+
+A 对	B 错
+
+38."定义“类”的方法的时候，需要加上function这个关键字
+    知识点：es6中class类；来源：自出"
+正确答案：B
+
+A 对	B 错
+
+39.在es6中，关于Promise 代表成功的方法是run
+正确答案：B
+
+A 对	B 错
+
+40.在es6中我们可以采用class类，进行面向对象开发
+正确答案：A
+
+A 对	B 错
+
+41.在es6中，提出了一种新的概念，可以实现类的定义，那么声明类的方式是
+正确答案：class
+

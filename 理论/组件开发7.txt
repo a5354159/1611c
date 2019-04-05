@@ -1,0 +1,248 @@
+webpack是一个前端（）工具；
+自动化构建或模块化管理和打包工具
+
+书写一段代码，配置webpack的入口和输出(入口文件为/src/index.js，输出地址为根目录下的dist文件夹)；
+"entry: __dirname + ""/src/index.js"",output: {path: __dirname + ""/dist"",filename: ""[name].js"",}"
+
+对webpack配置正确的loader,进行js文件的加载，并且将es6代码转换为es5，所有配置都在webpack.conf.js中进行配置，正确书写配置规则：
+"rules: [{
+            test: /\.js$/,
+            use: [""babel-loader""],
+            loader: ""babel-loader"",
+            options: {
+                ""presets"": [
+                    ""es2015""
+                ]
+            }
+        }]"
+
+在webpack中进行模块引入时，遵循（）模块化规范			
+commonJs
+
+"对webpack配置正确的loader,进行css文件的加载，所有配置都在webpack.conf.js中进行配置，
+正确书写配置规则：
+""rules: [{test: /\.css$/,use: [""style-loader"", ""css-loader""]}]"
+
+在webpack中将输出的js文件自动添加入html中的插件是
+CommonsChunkPlugin	
+HotModuleReplacementPlugin	
+html-webpack-plugin	
+都不是	
+		
+C
+
+gulp与webpack这两个前端自动化工具，（）更倾向于模块打包	
+
+gulp	
+webpack	
+都倾向	
+都不对			
+B
+
+在webpack的（）属性中进行配置rules规则	
+plugin	entry	"output
+"	module			
+D
+
+下面关于webpack说法正确的是	
+webpack只能有一个入口文件	
+webpack可以有多个入口文件	
+entry选项为输出配置	
+export选项为输出配置			
+B
+
+webpack的定义是什么	
+前端编辑器	前端运行环境  	模块化管理和打包工具	代码管理工具			
+C
+
+关于正确的webpack说法是	
+
+无法像gulp那样启动本地服务	
+无法借助node生态圈插件	
+无法进行代码版本的管理	
+无法进行代码的打包压缩等			
+C
+
+属于webpack的外部插件的有
+	
+HotModuleReplacementPlugin	
+CommonsChunkPlugin	
+UglifyJsPlugin	
+以上都不是
+			
+D
+
+
+webpack用于加载sass文件的loader是	
+sass-loader	
+css-loader	
+style-loader	
+bebal-loader			
+A
+
+关于webpack说法正确的有	
+模块化管理工具	前端打包工具	可以实现代码的管理	可以用做前端调试工具			
+AB
+
+关于webpack配置项说法正确的有	
+webpack的入口配置项为enter	
+webpack的入口配置项为entry	
+webpack的输出配置项为export	
+webpack的输出配置项为output	
+	
+BD
+
+output.crossOriginLoading配置是否进行跨域加载		A
+
+关于webpack的进行babel-loader加载文件时只可以加载.js后缀的文件是	B
+
+webpack中的loader需要写在output配置项中	B
+
+webpack可以实现任务集成		B
+
+webpack 各种包和loader都依赖node生态圈	A
+
+" 在es6中，webpack中将输出的js文件自动添加入html中的插件是什么（）
+   html-webpack-plugin
+
+"es6中，在webpack中进行模块引入时，遵循什么（）模块化规范：
+commonJs
+
+"对于gulp与webpack这两个前端自动化工具来说，哪一个更倾向于模块打包？（）；
+webpack
+
+" webpack的入口配置项为（），输出配置项为（）entry，output
+
+"在webpack中，如果想要对webpack配置正确的loader,来进行js文件的加载，并且将es6代码转换为es5，所有配置都在webpack.conf.js中进行配置，正确书写配置规则：
+ 
+"rules: [{
+ test: /\.js$/,
+use: [""babel-loader""],
+loader: ""babel-loader"",
+ options: {
+ ""presets"": [
+ ""es2015""
+ ]
+ }
+}]"
+
+
+要在webpack中，对webpack配置正确的loader,来进行css文件的正确加载，所有配置都在webpack.conf.js中进行配置，请正确书写配置规则：
+modules: [{
+           test: /\.css$/,
+    use: [""style-loader"", ""css-loader""]
+        }]"	"
+option: [{
+           test: /\.css$/,
+           use: [""style-loader"", ""css-loader""]
+        }]"	"
+rules: [{
+           test: /\.css$/,
+           use: [""style-loader"", ""css-loader""]
+        }]"	
+都不对	
+	
+C
+
+关于webpack的output配置项，output.crossOriginLoading配置用来干什么
+ 
+是否进行公用js提取	
+是否进行公用css提取	
+都不对	
+是否进行跨域加载			
+D
+
+"下面的说法对于webpack来说，正确的是
+
+无法像gulp那样启动本地服务 	
+无法借助node生态圈插件	
+无法进行代码版本的管理	
+无法进行代码的打包压缩等			
+C
+
+"在webpack中，以下用于正确加载sass文件的loader是
+sass-loader	
+css-loader	
+style-loader	
+bebal-loader			
+A
+
+"JavaScript中进行以下代码 
+    
+var name=&quot;root&quot;
+              $={
+                  name:&quot;李四&quot;,
+                  say:function(){
+                  alert(this.name);
+              }
+              }  执行$.say()的结果是：
+知识点：作用域；来源：网络"
+李四	
+this.name	
+以上都不对	
+root		
+	
+A
+
+"JavaScript中，用来在IE浏览器下删除事件监听的方法是（    ）
+知识点：IE浏览器下删除事件监听；来源：网络"	
+detachEvent	
+removeEventListener	
+addEventListener	
+attachEvent			
+A
+
+"JavaScript中，执行以下代码
+    
+function fun(){
+           var x=20;
+           alert(x);
+           setTimeout(function(){
+              x=30;
+              alert(x);
+           },2000);
+           alert(10);
+       }
+       fun();以上代码的弹出顺序是（   ）：
+知识点：作用域链；来源：网络
+"
+20,10,20	
+20,30,10	
+20,20,10	
+20,10,30			
+D
+
+"关于webpack的说法中，以下正确的是（）
+知识点：webpack知识点；来源：练习手册第7单元"
+无法像gulp那样启动本地服务 	
+无法借助node生态圈插件	
+无法进行代码版本的管理	
+无法进行代码的打包压缩等			
+C
+
+"在以下选项中，关于webpack的观点正确的有
+知识点：webpack的作用；来源：练习手册第7单元"
+模块化管理工具	
+前端打包工具	
+可以实现代码的管理	
+可以用做前端调试工具			
+AB
+
+"在webpack中，要想使用babel-loader进行加载文件时，以下说法正确的是：
+知识点：webpack的babel-loader文件加载；来源：练习手册第7单元"	
+只可以加载.js后缀的文件	
+可以加载任何后缀的js文件	 
+babel的配置文件可以在外部定义.babelrc文件	 
+以上说法都正确			
+BC
+
+"在webpack中，它的loader都需要写在output的配置项中
+" B
+"对于webpack来说， 各种包和loader都需要依赖node生态圈
+"A
+"对于offsetWidth属性来说，不能设置只能获取：
+"B
+"如果想要配置rules规则，需要在webpack的（module）属性中进行
+"A
+"在webpack中，属于它本身的内部插件的有HotModuleReplacementPlugin
+"A

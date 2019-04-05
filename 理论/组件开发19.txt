@@ -1,0 +1,237 @@
+vue-router的哪个方法可以动态添加配置路由
+正确答案：addRouters()
+
+vue-router的哪个方法可以实现在跳转路由时自动添加到浏览器的历史纪录中	
+正确答案：push()
+
+属于组件内部的路由钩子函数都有哪些？	
+正确答案：BeforeRouteEnter、beforeRouteUpdate、beforeRouteLeave
+
+在vue框架中，正确书写出vue-router的路由独享钩子函数：
+正确答案：beforeEnter、afterEnter
+
+在路由对象$route中，用（）方法获取当前路由的路径
+正确答案：$route.path()
+
+"在路由的对象$route中，用（）方法获取包含查询参数和hash的完整路径
+正确答案：$route.fullPath（）
+
+用代码实现vue-router的链接跳转，比如需要跳转到“/detail”路径，跳转的同时需要带上参数，id="1",以地址栏传参的方式
+正确答案：   :to="{ path: '/detail', query: { id:1 }}"
+
+当激活某个路由时，给点击的当前路由dom添加一个class类名，实现一个类似tab切换的效果，需要结合哪个属性：	
+正确答案：linkActiveClass
+
+至少写出三个针对vue的ui库     知识点：vue扩展知识 来源：练习手册20单元
+正确答案：element-ui、vux、mint-ui、iview
+使用代码正确书写出按需引入element-ui的button、Dialog组件         知识点：vue扩展知识 来源：练习手册20单元
+正确答案：
+"import 'element-ui/lib/theme-chalk/index.css'
+import {
+    Button,
+    Dialog
+  } from 'element-ui'
+ Vue.use(Button)
+  Vue.use(Dialog)"
+
+在使用element-ui时，如果要对一个列表进行渲染，需要使用（）组件           知识点：vue扩展知识 来源：练习手册20单元
+正确答案：Table、TableColumn
+
+element-ui是由（）团队进行开发的                                     知识点：vue扩展知识 来源：练习手册20单元
+正确答案：饿了么
+
+"如何在vue中进行第三方插件的扩展：比如，将jq扩展到vue的原型上；可以像“this.$()”这样使用                知识点：vue扩展知识 来源：练习手册20单元"
+正确答案：
+vue.use({
+ install (Vue) {  
+  Object.defineProperty(Vue.prototype, '$', {
+      value: jquery   })
+  
+ }
+})
+"
+
+在配置多视图多组件渲染路由时，路由对象设置正确的是	
+A："{
+      path: '/',
+      children: {
+        default: Foo,
+        a: Bar,
+        b: Baz
+      }
+    }"	
+B:"{
+      path: '/',
+      component: {
+        default: Foo,
+        a: Bar,
+        b: Baz
+      }
+    }"
+C:"{
+      path: '/',
+      components: {
+        default: Foo,
+        a: Bar,
+        b: Baz
+      }
+    }"	
+D:"{
+      path: '/',
+      children: [
+        Foo,
+        Bar,
+        Baz
+      ]
+    }"	
+		
+C
+当我们刷新浏览器时，哪种形式的参数还会存在$route中	
+params	
+arg	
+query	
+以上都不对			
+C
+
+关于路由的独享钩子的是	
+before	
+beforeEnter	
+enter	
+beforeEach			
+B
+
+在vue-router中路由信息对象说法正确的是	
+$route.path：获取的是hash路径	
+$route.params：获取的是 URL 查询参数	
+$route.params：包含了 动态片段 和 全匹配片段	
+以上都正确			
+C
+
+"使用vue-router后，当打包构建应用时，Javascript 包会变得非常大，影响页面加载。如果我们能把不同路由对应的组件分割成不同的代码块，然后当路由被访问的时候才加载对应组件，我们可以使用？"	
+路由懒加载	
+路由预加载	
+路由瞬时加载	
+都不对			
+A
+
+我们在使用组件懒加载时的书写格式正确的有：	
+const Foo = (require) => require('./Foo.vue')	
+const Foo = () => get('./Foo.vue')	
+const Foo = () => import('./Foo.vue')	
+都不对			
+C
+
+有时候我们想把某个路由下的所有组件都打包在同个异步块 (chunk) 中，实现方式正确的是	
+const Foo = () => import(/！ webpackChunkName: "group-foo" ！/ './Foo.vue')	
+const Foo = () => import(/* webpackChunkName: "group-foo" */ './Foo.vue')	
+const Foo = () => import(/？ webpackChunkName: "group-foo" ？/ './Foo.vue')	
+都不对			
+B
+
+如果我们使用组件懒加载是，应该给babel添加一个什么插件？	 
+syntax-dynamic-require	 
+syntax-dynamic-import	 
+syntax-dynamic-important	
+都不对			
+B
+
+在vue-router中添加基路径的属性是	
+base	
+path	
+url	
+都不对			
+A
+
+全局配置 <router-link> 的默认“激活 class 类名的是？	
+ActiveClass	
+linkActiveClass	
+linkClass	
+都不对			
+B
+
+vue的router中可以实现滚动行为的是	
+scroll	
+scrollBehavior	
+Behavior	
+BehaviorGo			
+B
+
+配置 router 的 Vue 根实例的属性是	
+Router.app	
+Router.mode	
+Router.history	
+都不对			
+A
+
+vue-router的router实例描述不正确的有	
+router.app路由使用模式	
+router.replace(location)：进行路由的替换，不会将上次的路由保存到history中	
+router.replace(location)：进行路由的替换，会将上次的路由保存到history中	
+router.go(n)中的n不能为负数			
+ACD
+
+下面属于vue-router实例中的方法是	
+router.push(location)	
+router.go(n)	
+router.forward()	
+router.goback()			
+ABC
+
+在使用动态路由时，路由跳转过程中因为组件的复用问题，导致组件钩子函数无法重新执行，无法进行数据的重新请求问题，解决办法说法错误的是
+通过beforeRouterLeave函数进行获取	
+通过 beforeRouteEnter函数获取	
+watch对$route对象的监听	
+无法解决	
+ABD
+
+vue-router中使用路由时，获取参数正确的有	
+$route.art	
+$route.body	
+$route.query	
+$route.params			
+CD
+
+在vue中，关于路由钩子函数参数的next方法说法不正确的有	
+next()调用时，路由会在当前路由，不会做任何跳转	
+next()调用时，路由会跳转目标路由	
+next()调用时，不能加入参数	
+next()不调用时，路由也会跳转目标路由			
+ACD
+
+我们通过router.mode获取到值可以是	
+都可以	
+hash	
+history	
+abstract			
+ABCD
+
+可以实现vue-router倒退的方法是？	"
+router.go(n)
+router.back()	
+routre.push()	
+都不对			
+AB
+
+路由信息对象表示当前激活的路由的状态信息，是不可变得，每次成功的导航都会产生一个新的对象
+A
+
+在vue中使用路由时，vue-router中$route.matched得到的是路由数组，不会包括嵌套的路由纪录	
+B
+
+vue-router中router-link的append属性用来设置路由跳转后会不会留下history纪录
+B
+
+router.onError(callback)会在路由导航过程中出错时被调用
+A
+
+一个路由对象 (route object) 表示当前激活的路由的状态信息
+A
+
+在组件内部，我们无法获取路由的实例
+B
+
+$route.hash可以获取到路由的hash	
+A
+
+$route.fullPath一个数组，包含当前路由的所有嵌套路径片段的路由记录
+B

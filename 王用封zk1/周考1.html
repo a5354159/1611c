@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数柱</title>
+    <style>
+        * {
+            list-style: none;
+        }
+        
+        #btn {
+            margin-bottom: 20px;
+        }
+        
+        .jump {
+            animation: jump 0.2s ease-in-out 0s 1 alternate both;
+        }
+        
+        @keyframes jump {
+            0% {
+                transform: translateY(0px)
+            }
+            50% {
+                transform: translateY(50px)
+            }
+            100% {
+                transform: translateY(0px)
+            }
+        }
+        
+        #box {
+            display: flex;
+            align-items: flex-end;
+        }
+        
+        #box div {
+            text-align: center;
+            color: #fff;
+            border-radius: 5px;
+            margin-left: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="btn">
+        <button>添加静态的数柱</button>
+        <button>添加会动的数柱</button>
+        <button>所有会动的数柱依次运动</button>
+        <input type="number" min="1" max="9" />
+    </div>
+    <div id="box">
+
+    </div>
+    <!-- <script src="index.js"></script> -->
+    <script>
+        const oBox = document.getElementById('box');
+        const staticBtn = document.getElementsByTagName('button')[0];
+        const moveBtn = document.getElementsByTagName('button')[1];
+        const numInput = document.getElementsByTagName('input')[0];
+        const allBtn = document.getElementsByTagName('button')[2];
+        class StaticNumBlock { // 静态数柱的类
+            constructor({
+                color = "red",
+                text = 1,
+                width = 30,
+                height = 30,
+                margin = 10,
+                min = 1,
+                max = 9
+            }) {
+                if (text >= min && text <= max) {
+                    this.render(color, text * 1, width, height, margin)
+                } else {
+                    alert(`请输入${min}到${max}之间的数字`)
+                }
+            }
+            render(color, text, width, height, margin) {
+                this.box = document.createElement('div');
+                this.box.style.cssText = `background:${color}; height:${height+(text-1)*margin}px;width:${width}px;
+    padding-top:${(text-1)*margin}px;line-height:${height}px`
+                this.box.innerHTML = text;
+                oBox.appendChild(this.box)
+            }
+        }
+        class MoveNumBlock extends StaticNumBlock { // 动态数柱的类 
+            constructor(obj) {
+                super(obj);
+                this.box.classList.add("ani");
+                this.addEvent()
+            };
+            addEvent() {
+                const eventName = "webkitAnimationEnd" || "animationEnd";
+                this.box.onclick = () => {
+                    this.box.classList.add('jump');
+                }
+                this.box.addEventListener(eventName, () => {
+                    this.box.classList.remove("jump");
+                })
+            }
+        }
+
+
+        // 分别给按钮添加点击事件，实现所要求的的效果
+        staticBtn.onclick = () => {
+            new StaticNumBlock({
+                color: "red",
+                text: numInput.value
+            })
+        }
+        moveBtn.onclick = () => {
+            new MoveNumBlock({
+                color: "pink",
+                text: numInput.value
+            })
+        }
+
+        allBtn.onclick = () => {
+            const anis = [...oBox.querySelectorAll(".ani")];
+            anis.forEach((item, i) => {
+                setTimeout(() => {
+                    item.classList.add("jump")
+                }, i * 180)
+            })
+        }
+    </script>
+</body>
+
+</html>

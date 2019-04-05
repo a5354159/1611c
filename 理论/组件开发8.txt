@@ -1,0 +1,234 @@
+请在webpack中配置一段代码实现一个本地服务；	
+"devServer: {hot: true,port: 9900,host: 'localhost',}"
+
+webpack搭建本地服务时，需要借助哪个应用程序启动webpack.config.js文件webpack-dev-server
+
+"在webpack中实现请求拦截（接口开放），接口为/api，响应数据为""ok"",get方式请求，补全下面代码：
+ devServer: {
+     
+        
+}"			
+	"setup(app) {
+            app.get('/api', function(req, res) {
+                res.json('ok');
+            });
+        }"
+"关于代理在webpack中配置，如将当前项目中所有的/api接口全部代理到http://localhost:3000/服务之下：
+
+devServer: {
+        contentBase: path.join(__dirname, ""dist""),      
+        watchContentBase: true,
+        compress: true,      
+        hot: true,
+        port: 9900,
+        host: 'localhost',
+       
+    }"	
+"proxy: {
+           ""/api"": ""http://localhost:3000/""
+         },"
+
+webpack借助（）插件实现多个文件中公共代码的提webpack.optimize.CommonsChunkPlugin，
+
+关于webpack的filename属性()可以直接指定文件的根目录和文件名
+
+webpack的chunkFilename属性 模块文件打包后的名字
+
+webpack是否可以拆分配置文件可以
+
+webpack中devserveer中，配置端口号的属性是port
+
+webpack中做接口代理的属性是proxy
+
+在基于webpack的前端项目中，如果在请求接口数据时出现跨域现象，我们该用什么来解决？proxy代理
+
+
+在webpack中有一个叫devtool的属性，这个属性是用来做什么的；
+
+启动本地服务	
+打包	
+形成sourcemap，方便浏览器进行debug	
+都不是			
+C
+
+借助webpack实现文件懒加载的配置是（）方法
+
+import from	
+require.ensure方法	
+load（）	
+都不是			
+B
+
+关于webpack的加载器说法正确的是	
+
+rules属性值格式为一个对象
+loader属性值格式为一个对象	
+rules属性值格式为一个数组	
+loader属性值格式为一个数组	
+C
+
+关于webpack加载器中test属性说法正确的是
+
+匹配文件的类型	
+定义加载器的类型
+定义加载的器的配置项	
+定义插件的类型			
+A
+
+关于webpack的输出output属性说法正确是
+
+filename属性可以直接指定文件的根目录和文件名	
+filename属性只可以直接指定文件根目录	
+filename属性可以直接指定根目录下的子目录路径和文件名 	
+filename使用指定输出文件根目录的属性			
+C
+
+webpack的加载器进行文件加载时，用什么设置哪些文件不被加载
+	
+include	
+exclude	
+test	
+loader			
+B
+
+webpack的output选项书法正确的是
+
+chunkFilename属性必须在模块以require.ensure()方法引入时才会生效	
+chunkFilename属性配置的是模块文件打包前的名字	
+chunkFilename属性配置的是出口文件的名字	
+chunkFilename可以require()直接引入文件时生效			
+A
+
+关于webpack配置项中resolve属性说法正确的有
+
+模块输出的解决方案 	
+用来规定sourcemap来	
+resolve.alias可以指定一个路径或者模块替换文件中引入的node-modules模块	
+以上说法都正确			
+C
+
+webpack的加载一个图片的使用的loader是
+css-loader	
+img-loader	
+url-loader	
+html-loader			
+C
+
+webpack加载css需要使用到的loader有
+
+css-loader	
+url-loadere	
+module-loader	
+都不对			
+A
+
+webpack中如果加载css时使用module的语法加载，则对css-loader需要怎么配置	
+
+css-loader?module	
+module?css-loader	
+module?style-loader	
+都不对			
+A
+
+"webpack中的加载器说法正确的是知识点：webpack的locader用法；来源：练习手册第8单元
+"
+rules属性值格式为一个数组；	
+rules属性值格式为一个对象；	
+loader属性值格式为一个对象	
+loader属性值格式为一个数组；			
+A
+
+"在webpack中加载器的test属性说法正确的是知识点：webpack的加载器；来源：练习手册第8单元"	
+
+定义插件的类型	
+定义加载的器的配置项	 
+定义加载器的类型	
+匹配文件的类型			
+D
+
+"关于webpack的输出output属性说法正确是知识点：webpack的属性；来源：网络"
+
+filename属性可以直接指定根目录下的子目录路径和文件名 
+filename属性可以直接指定文件的根目录和文件名	
+filename属性只可以直接指定文件根目录	
+filename使用指定输出文件根目录的属性			
+A
+
+"当webpack的加载器进行文件加载时，用什么设置时哪些文件不被加载知识点：webpack加载器；来源：练习手册第8单元"	
+include	
+test	
+exclude	
+loader			
+C
+
+"关于webpack中的入口entry属性说法正确的是知识点：webpack属性；来源：练习手册第8单元
+"	
+属性值只可以是字符串的格式	
+属性值既可以是对象格式也可以是字符串格式	
+属性值只可以是对象的格式	
+属性值可以为数组格式			
+B
+
+"resolve:{
+        alias:{ 
+            xyz: ""/absolute/path/to/file.js"" 
+        }
+    }
+       
+  如上述在webpack中进行配置后，下面说法正确的是"
+	
+require(“xyz”)，在文件引入的将是/absolute/path/to/file.js	
+require(“xyz/file.js”) 在文件引入的将是/absolute/path/to/file.js	
+require(“xyz”)，在文件引入的将是/node_modules/xyz/file.js	
+require(“xyz/file.js”) 在文件引入的将是/node_modules/xyz/file.js			
+AD
+
+一般项目架构中，关于webpack配置文件的说法正确的是
+	
+webpack.prop.js为本地开发环境的配置文件	
+webpack.dev.js为本地开发环境的配置文件	
+webpack.prop.js为本地打包上线的配置文件	
+webpack.dev.js为本地打包上线的配置文件			
+BC
+
+"webpack的devServer中的配置项说法正确的有知识点：webpack的配置项；来源：练习手册第8单元"
+
+contentBase为模块的热加载;	
+setup用来做代理的，可以将请求代理到别的服务;	
+setup为服务的中间件，可以对请求进行拦截;	
+contentBase用来定义静态文件的地址			
+CD
+
+"关于webpack中的devtool说法正确的有：知识点：webpack的加载器；来源：练习手册第8单元"
+
+用来启动本地服务的	 
+用配置插件类型的	 
+用来配置生成source map的类型的;	 
+形成的source map方便调试			
+CD
+
+webpack中可以通过指定的属性，来改变模块的引入地址A
+
+webpack中可以通过target属性配置webpack的执行环境A
+
+webpack 中对于文件的压缩需要借助第三方插件，webpack内部没有相应插件配置	B
+
+在webpack中实现热启动必须配合（webpack.HotModuleReplacementPlugin）插件	A
+
+webpack中resolve.extensions属性是一个包含模块扩展名的数组A
+
+"webpack的entry属性的属性值既可以是对象格式也可以是字符串格式A
+
+HotModuleReplacementPlugin为第三方插件	B
+
+（UglifyJsPlugin为第三方插件
+
+UglifyJsPlugin为第三方插件
+HtmlWebpackPlugin为webpack内置插件；	
+CommonsChunkPlugin为第三方插件	
+HotModuleReplacementPlugin为webpack内置插件；		
+A
+
+CommonsChunkPlugin为第三方插件		
+A
+

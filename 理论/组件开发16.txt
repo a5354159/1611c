@@ -1,0 +1,234 @@
+在vue中的过渡组，我们一般配合（）指令进行使用	
+正确答案：v-if、v-show
+
+书写一段代码实现某个div元素的淡出效果		
+正确答案：
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active in below version 2.1.8 */ {
+  opacity: 0
+}
+<div id=""demo"">
+  <button v-on:click=""show = !show"">
+    Toggle
+  </button>
+  <transition name=""fade"">
+    <p v-if=""show"">hello</p>
+  </transition>
+</div>
+
+哪个钩子函数是用来定义离开过渡状态的	
+正确答案：v-leave-active
+
+如果我们同时使用过渡和动画时，用（）特性来设置vue监听的类型，它的值分别为（）和（）	
+正确答案：type、 animatioin 、transition
+
+正确书写一段代码实现离开过渡过程中，钩子函数的注册
+正确答案：
+<transition
+  v-on:leave=""leave""
+>
+</transition>
+methods: {
+   leave: function (el, done) {
+   
+    done()
+  }
+}
+
+正确书写一段代码，实现dom初次渲染过渡				
+正确答案：
+<transition
+  appear
+  appear-class=""custom-appear-class""
+  appear-to-class=""custom-appear-to-class"" 
+  appear-active-class=""custom-appear-active-class""
+>
+  <!-- ... -->
+</transition>
+
+在vue的过渡过程中，如果当前元素先进行过渡，完成之后新元素过渡进入。需要怎么配置，正确书写代码	
+正确答案：
+<transition name=""fade"" mode=""out-in"">
+  <!-- ... the buttons ... -->
+</transition>
+
+结合动态组件实现多个组件的过渡，正确书写代码	
+正确答案：
+<transition name=""component-fade"" mode=""out-in"">
+  <component v-bind:is=""view""></component>
+</transition>
+
+在vue的过渡效果中，可以结合哪个css库进行，动画的实现	
+正确答案：Animate.css
+
+如果在vue中实现过渡，我们需要使用内部提供的哪个组件？
+正确答案：transition 
+
+针对vue的过渡，其是否有生命周期函数	
+正确答案：是
+
+过渡效果中，我们是否可以直接使用css3的很多动画效果
+正确答案：是
+
+CSS 动画用法同 CSS 过渡，区别是在动画中（） 类名在节点插入 DOM 后不会立即删除，而是在 animationend 事件触发时删除。	
+正确答案：v-enter
+
+在vue过渡的哪个钩子函数中必须进行done方法的调用	
+beforeEnter	
+beforeLeave	
+afterEnter	
+enter			
+D
+
+"在vue中怎么设置嵌套的内部元素相比于过渡效果的根元素有延迟的或更长的过渡效果"	
+transition	
+animation	
+duration	
+type			
+C
+
+在vue中结合第三方动画库时，一般怎么使用	
+可以在css中对v-enter-active进行animation动画名的设置	
+可以在css中对v-leave-active进行animation动画名的设置	
+可以直接在transition标签上进行enter-active-class属性进行设置动画名	
+可以在css中对v-leave进行animation动画名的设置			
+D
+
+在vue中如果一个动画在dom插入和删除时执行的效果正好相反，怎么进行设置	
+将v-enter-to和v-enter的样式设置成一样就可以	
+将v-enter和v-leave-to的样式设置成一样就可以	
+将v-leave和v-leave-to的样式设置成一样就可以	
+将v-enter和v-leave的样式设置成一样就可以			
+B
+
+如果同时使用过度和动画，过渡的完成，必须设置相应的	
+事件监听器	
+dom处理函数	
+动画处理函数	
+都不对			
+A
+
+如果我们要针对动画设置延迟效果时，需要使用什么属性	
+transition	
+duration	
+timer	
+都不对			
+B
+
+在动画的执行中，属于进入动画前的事件监听为	
+enter	
+before-enter	
+out	
+beforeout			
+B
+
+JavaScript 过渡的元素添加 （），Vue 会跳过 CSS 的检测。这也可以避免过渡过程中 CSS 的影响。	
+:done='true'	
+v-bind:css="true"	
+v-bind:css="false"	
+:done="false"			
+C
+
+如果我们想要使用js动画库，进行过渡，我们可以使用	
+transition.js	
+animation.js	
+Velocity.js	
+都不对			
+C
+
+如果只需要实现初始渲染的过度，我们需要添加的属性是？	
+remote	
+first	
+once	
+appear			
+D
+
+定义进入过渡生效时的状态的生命周期函数是	
+v-leave	
+v-enter-active	
+v-enter	
+都不对			
+B
+
+（）可以控制进入/离开过渡的不同的缓和曲线	
+v-out-active	
+v-leave-active	
+v-out	
+都不对			
+B
+
+下面属于vue过渡钩子函数的有	
+enterCancelled	
+enter	
+enterCancell	
+afterLeave			
+ABD
+
+下面哪些属性可以让过渡效果初次渲染时执行	
+appear	
+duration	
+init	
+update			
+BCD
+
+关于vue的过渡钩子函数说法正确的是
+enter钩子函数中如果不进行done的调用，则为同步	
+enter钩子函数中如果不进行done的调用，过渡效果则不执行	
+enter钩子函数中如果不进行done的调用，过渡效果可以执行	
+leave钩子函数中必须进行done的调用，才会进行异步的过渡执行			
+ABD
+
+关于vue的过渡说法正确的有	
+过渡属性的删除或者添加实在dom节点插入删除时触发的	
+在过渡的过程中，过渡组件提供了js钩子函数	
+过渡效果只会在dom的初次插入时触发	
+以上说法都正确			
+AB
+
+下面属于vue过渡过程中触发的钩子函数是	
+v-enter	
+v-enter-active
+v-enter-to	
+v-enter-from			
+ABC
+
+下面选项中属于在vue初始渲染过渡中的钩子函数的是	
+before-appear	
+v-enter	
+v-enter-active	
+after-appear			
+AD
+
+下面对vue的过渡,具有的模式有哪些？	
+in-out	
+out-in	
+out	
+out-to			
+AB
+
+在vue的transition内部如果有多个相同标签，则默认会进行标签的复用，后期状态的改变不会触发过渡效果	
+A
+
+在vue中解决过渡时，标签的复用问题，可以使用key属性来操作
+A
+
+vue的过渡可以结合Velocity.js进行设置	
+A
+
+关于vue中我们可以实现多个组件的过度	
+A
+
+在Vue中,如果我们对整个列表进行过渡，可以使用transition-group元素
+A
+
+<transition-group>元素不可以使用tab属性		
+B
+
+<transition-group> 组件还有一个特殊之处。不仅可以进入和离开动画，还可以改变定位	
+A
+
+<transition-group>的v-move 对于设置过渡的切换时机和过渡曲线非常有用
+A
+

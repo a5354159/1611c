@@ -1,0 +1,216 @@
+1："vue的（）修饰符转变为 change 事件中同步知识点：vue事件监听；来源：练习手册第12单元"	
+答案：lazy
+2："在vue中，可以对事件监听进行简写的符号是知识点：vue事件监听；来源：练习手册第12单元"
+答案：@
+3："在vue中，（）修饰符是用来阻止事件冒泡的知识点：vue事件监听；来源：练习手册第12单元"	
+答案：stop
+4：" 在vue中，vue的事件修饰符中left修饰符是做什么的知识点：vue事件监听；来源：练习手册第12单元"	
+答案：检测鼠标左键的
+5："在vue中，（）属性只能结合v-for来使用，否则将无法使用知识点：vue事件监听；来源：练习手册第12单元"	
+答案：key
+6："<div id=""example-1"">
+  <button >Add 1</button>
+  <p>The button above has been clicked {{ counter }} times.</p>
+</div>
+var example1 = new Vue({
+  el: '#example-1',
+  data: {
+    counter: 0
+  }
+})
+点击add按钮，实现counter数值的累加，注意不可以使用method定义函数，补全上述代码"	
+答案：<button v-on:click="counter += 1">Add 1</button>
+
+7："<div id=""example-2"">
+ 
+  <button v-on:click=""fn"">点击</button>
+</div>
+var example2 = new Vue({
+  el: '#example-2',
+  methods: {
+    fn: function () {
+      
+        
+    }
+  }
+})
+
+补全上述代码，实现点击按钮时，可以在fn函数中打印出当前标签的名字"		
+答案：fn: function (event) {
+     console.log(event.target.tagName)
+}"
+8：书写一段代码实现当input失去焦点的时候，同步view层的数据到model层，使用修饰符	
+答案：<input type="text" id="user" v-model.lazy="name.value" placeholder="请输入用户名" >
+
+9：使用勾选框实现一个多选功能，比如一个地区的选择，有北京、上海，成都，可以同时选择两个城市，放入到数组中；	
+答案：<input type=""checkbox"" value=""上海"" v-model=""checkedNames"">
+ 
+  <input type=""checkbox"" value=""北京"" v-model=""checkedNames"">
+  
+  <input type=""checkbox"" value=""成都"" v-model=""checkedNames"">
+
+  new Vue({
+    el: '#example-3',
+   data: {
+     checkedNames: []
+   }
+ })
+10："用代码实现一个下拉列表，初始化时，可以显示出“请选择”三个字，并且此项是不可选择的
+
+用具体代码实现：
+答案：
+<select v-model=""selected"">
+    <option disabled value="""">请选择</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+  </select>
+
+11：在vue中，如果我们对事件和发生函数间做一层处理，可以使用（）	
+答案：事件修饰符
+
+"在vue中，捕获“删除”和“退格”键的修饰符是：知识点：vue事件监听；来源：练习手册第12单元"	
+delete	
+eac	
+enter	
+都不对			
+A
+
+"在vue中，用来获取表单元素值得指令是知识点：vue事件监听；来源：练习手册第12单元"	
+v-model	
+v-html	
+v-text	
+都不对			
+A
+
+"在vue中,关于多行插值的说法正确的是 知识点：vue事件监听；来源：练习手册第12单元"
+可以直接采用<textarea></textarea>插值	
+可以直接写入value插值	
+需要通过v-model指令进行插值	
+需要通过v-bind指令进行插值			
+C
+
+"在vue中,对于使用v-on进行事件的绑定说法正确的是知识点：vue事件监听；来源：练习手册第12单元"	
+在viewModel销毁时，所有的事件处理器都会自动删除	
+在viewModel销毁时，所有的事件处理器都会手动删除	
+不推荐此种方式进行书写	
+在viewModel销毁时，所有的事件处理器将无法删除			
+A
+
+"vue中，属于vue事件修饰符的是知识点：vue事件监听；来源：练习手册第12单元"	
+.double	
+.end	
+.capture	
+.start			
+C
+
+"在vue中,用做事件监听的指令是：知识点：vue事件监听；来源：练习手册第12单元"	
+v-click	
+v-on 	
+v-bind	
+v-to			
+B
+
+"在vue中，关于使用v-on进行事件的绑定说法正确的是：知识点：vue事件监听；来源：练习手册第12单元"	
+在viewModel销毁时，所有的事件处理器都会自动删除	
+在viewModel销毁时，所有的事件处理器都会手动删除	
+不推荐此种方式进行书写	
+在viewModel销毁时，所有的事件处理器将无法删除			
+A
+
+关于vue中事件修饰符delete的说法正确的是          知识点：vue事件监听；来源：练习手册第12单元	
+捕获shift键	
+捕获“enter”键	
+捕获方向键	
+捕获“删除”和“退格”键			
+D
+在vue中v-for指令遍历对象时，最后一个参数为	
+索引	
+ID	
+KEY	
+都不对			
+A
+
+在vue中可以做事件监听的指令是	
+v-bind	
+v-emit	
+v-on	
+都不对			
+C
+在vue的事件中属于阻止事件冒泡的修饰符是	"
+.stop
+.prevent	
+.once 	
+.capture			
+A
+在vue的事件修饰符说法正确的是	
+对原生事件进行劫持处理	
+对dom进行封装	
+对数据进行处理	
+都不对			
+A
+在vue中，属于事件修饰符的有：	
+.double	
+.end	
+.capture	
+.start			
+C
+"在vue中使用v-on进行事件的绑定说法正确的是：
+在viewModel销毁时，所有的事件处理器都会自动删除	
+在viewModel销毁时，所有的事件处理器都会手动删除	
+不推荐此种方式进行书写	
+在viewModel销毁时，所有的事件处理器将无法删除	
+A
+
+关于vue中事件修饰符delete的说法正确的是	
+捕获shift键	
+捕获“enter”键	
+捕获方向键	
+捕获“删除”和“退格”键	
+D
+
+不属于鼠标表单修饰符的是：
+lazy	
+number	
+trim	
+keyup	
+D
+"在vue中，属于鼠标表单修饰符的是知识点：vue事件监听；来源：练习手册第12单元"	
+lazy	
+number	
+trim	
+keyup			
+ABC
+
+"vue中，关于vue的表单修饰符说法正确的是知识点：vue事件监听；来源：练习手册第12单元"	
+lazy可以让v-model在change事件中同步	
+lazy可以让v-model在keyup事件中同步	
+number自动将用户的输入值转为 Number 类型	
+number自动将用户的输入值转为 string类型		
+AC
+
+
+关于vue的表单修饰符说法正确的是	
+lazy可以让v-model在change事件中同步	
+lazy可以让v-model在keyup事件中同步	
+number自动将用户的输入值转为 Number 类型	
+number自动将用户的输入值转为 string类型			
+AC
+
+属于vue事件修饰符的是	
+stop	
+prevent	
+self	
+once			
+ABCD
+(1)"在vue中，v-model不可以获取（value）的初始值A
+(2)"vue中，stop属于vue事件修饰符的有 A
+(3)"在vue中，事件操作符是否可以进行串式操作A
+(4)"在vue中self修饰符，只能允许事件发生在自身dom节点上A
+(5)"vue中的v-for不可以遍历数值     	B
+(6)在vue中哪些指令可以将内容绑定到dom节点中v-html	A
+(7)v-model不可以获取value、selected、checked 的初始值	 A
+(8)在vue中，事件操作符是否可以进行串式操作	A
+(9)在vue中的prevent修饰符是用来阻止冒泡的	 B
+(10)在vue中self修饰符，只能允许事件发生在自身dom节点上 A
+

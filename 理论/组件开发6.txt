@@ -1,0 +1,359 @@
+﻿1.关于es6的module语法说法错误的是
+正确答案：B
+
+A.一个模块就是一个独立的文件
+
+B.import命令用于规定模块的对外接口
+
+C.export命令用于规定模块的对外接口
+
+D.import命令用于输入其他模块提供的功能
+
+2.不属于export抛出的数据类型
+正确答案：D
+
+A.object
+
+B.function
+
+C.类
+
+D.在export语句前定义过的变量名  
+
+3.下面写法报错的是
+正确答案：A
+
+A."var m = 1;
+   export m;"
+
+B."var m = 1;
+   export {m};"
+
+C." var n = 1;
+   export {n as m};"
+
+D.export var m = 1;
+
+4.关于export说法正确的有：
+正确答案：B
+
+A. export命令可以出现在模块的任何位置，可以出现在局部作用域
+
+B.export命令可以出现在模块的任何位置，只要处于模块顶层就可以
+
+C.export命令可以出现在模块的任何位置，可以出现在块级作用域
+
+D.export命令只可以出现在模块的尾部
+
+5.关于import命令说法错误的有
+正确答案：C
+
+A.import命令接受一对大括号，里面指定要从其他模块导入的变量名；
+
+B.如果想为输入的变量重新取一个名字，import命令要使用as关键字，将输入的变量重命名。
+
+C.import后面的from指定模块文件的位置，只可以是绝对路径，不能为相对路径；
+
+D.js文件的引入时，.js后缀可以省略
+
+6.下面代码不会报错的有
+正确答案：B
+
+A. import { 'f' + 'oo' } from 'my_module';
+
+B."foo(); import { foo } from 'my_module';"
+
+C."let module = 'my_module';
+    import { foo } from module;"
+
+D." if (x === 1) {
+  import { foo } from 'module1';
+} else {
+  import { foo } from 'module2';
+}"
+
+7.关于export default命令说法错误的是
+正确答案：A
+
+A."用于指定模块的默认输出，一个模块可以有多个默认输出"
+
+B.使用export default时，对应的import语句不需要使用大括号
+
+C.使用export default抛出函数时，import命令可以为该匿名函数指定任意名字
+
+D.用于指定模块的默认输出，一个模块只能有一个默认输出
+
+8.关于export default书写正确的有
+正确答案：A
+
+A.export default 42;
+
+B.export default var a = 1;
+
+C.export default let a = 1;
+
+D.export default { a:1}
+
+9.关于下面对象解构中会报错的是(    )
+正确答案：AD
+
+A."var foo;{ foo: foo } = { foo: 1 }"
+
+B.({} = [true, false])
+
+C.({} = 'abc')
+
+D.{} = []
+
+10.下面书写正确的有(      )：
+正确答案：ACD
+
+A."export default function foo() {
+  console.log('foo');
+};"
+
+B.export default const b = 1;
+
+C."function foo() {
+     console.log('foo');
+  }
+
+  export default foo;"
+
+D."function add(x, y) {
+    return x * y;
+  }
+  export {add as default}"
+
+11.import命令具有提升效果，会提升到整个模块的头部，首先执行；
+正确答案：A
+
+A 对	B 错
+
+12.import是静态执行，所以不能使用表达式和变量，这些只有在运行时才能得到结果的语法结构。
+正确答案：A
+
+A 对	B 错
+
+13.import只能在模块的可以在块级作用域
+正确答案：B
+
+A 对	B 错        
+
+14.在js中改变函数内部this指向的方法有bind
+正确答案：A
+
+A 对	B 错
+
+15.多次重复执行同一句import语句，会执行多次
+正确答案：B
+
+A 对	B 错
+
+16."var x = 1;
+function add(y,z){
+    var sum = add(x+y+z);
+}
+add(2,3);
+console.log(sum);出现上述原因为"
+正确答案：递归导致的栈溢出
+
+17.在es6中怎么实现模块的继承，例如继承my_module模块所有变量，用一段代码表示（）
+正确答案：export * from 'my_module'
+
+18.在b文件中如下这样引入几个变量：import {a,b} from 
+"a";那么在a文件（模块）中该怎么定义（）                  
+正确答案：export let a=1;export let b=2;
+
+19.在一个文件（模块）中可以有（）个export default
+正确答案：1
+
+20.对于已经定义过的变量，是否可以用export default进行再次抛出
+正确答案：可以
+
+21."import是静态执行，所以不能使用（），这些只有在运行时才能得到结果的语法结构。
+    知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：表达式和变量
+
+22."在es6中，module语法主要由（）组成；
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：export，import
+
+23."如果使用export抛出函数时，用什么语法抛出，在用import引入时，不需要直接定义引入的变量名
+知识点：es6中的模块引入与抛出；来源：网络"
+正确答案：export default
+
+24." 如果有一个变量我们在引入时需要这样书写，import {name} from“/a.js”,那么我们在抛出时，该怎么抛出（）
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：export const name="1"
+
+25."在es6中，我们定义变量的方式有哪些
+知识点：es6中的模块引入与抛出；来源：网络"
+正确答案：import、export、let、const、class
+
+41.如果我们在es6中继承一个export default的数据，该怎么做
+正确答案：export {default} form ""
+
+26."var n = 1;
+export {n as m};
+如上述抛出的变量，我们在引入时，该如何引入
+知识点：es6中的模块引入与抛出；来源：网络"
+正确答案：C
+
+A.import m from "./a.js"
+
+B.import [m] from "./a.js"
+
+C.import {m} from "./a.js"
+
+D.都不对
+
+27."在es6中，我们如果想要正确的把下面函数抛出，则代码具体书写为:
+function f() {}
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：B
+
+A.export default {f}
+
+B.export {f}
+
+C.export f
+
+D.都不对
+
+28."在es6中，下面写法报错的是
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：A
+
+A." var m = 1;
+   export m;"
+
+B."var m = 1;
+   export {m};"
+
+C."var n = 1;
+   export {n as m};"
+
+D.export var m = 1;
+
+29."在es6中，关于export说法正确的有：
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：B
+
+A.export命令可以出现在模块的任何位置，可以出现在局部作用域
+
+B.export命令可以出现在模块的任何位置，只要处于模块顶层就可以
+
+C.export命令可以出现在模块的任何位置，可以出现在块级作用域
+
+D.export命令只可以出现在模块的尾部
+
+30."在es6中，关于import命令说法错误的有：
+知识点：es6中的模块引入与抛出；来源：网络"
+正确答案：C
+
+A.import命令接受一对大括号，里面指定要从其他模块导入的变量名；
+
+B.如果想为输入的变量重新取一个名字，import命令要使用as关键字，将输入的变量重命名。
+
+C.import后面的from指定模块文件的位置，只可以是绝对路径，不能为相对路径；
+
+D.js文件的引入时，.js后缀可以省略
+
+31."在es6中，下面代码不会报错的有 
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：B
+
+A.import { 'f' + 'oo' } from 'my_module';
+
+B."foo();
+
+   import { foo } from 'my_module';"
+
+C."let module = 'my_module';
+    import { foo } from module;"
+
+D." if (x === 1) {
+  import { foo } from 'module1';
+} else {
+  import { foo } from 'module2';
+}"
+
+32."在es6中，关于export default命令说法错误的是
+知识点：es6中的模块引入与抛出；来源：网络"
+正确答案：A
+
+A.用于指定模块的默认输出，一个模块可以有多个默认输出
+
+B.使用export default时，对应的import语句不需要使用大括号
+
+C.使用export default抛出函数时，import命令可以为该匿名函数指定任意名字
+
+D.用于指定模块的默认输出，一个模块只能有一个默认输出
+
+33."在es6中，关于export default书写正确的有：
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：A
+
+A.export default 42;
+
+B.export default var a = 1;
+
+C.export default let a = 1;
+
+D.export default { a:1}
+
+34."在es6中，关于import命令说法正确的有（）：
+知识点：es6中的模块引入与抛出；来源：网络"
+正确答案：AB
+
+A."引擎处理import语句是在编译时，"
+
+B.import只能在模块的顶层;
+
+C.引擎处理import语句是在运行时;
+
+D.import只能在模块的可以在块级作用域;
+
+35."在es6中，关于下面对象解构中会报错的是(    )：
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：AD
+
+A."var foo;{ foo: foo } = { foo: 1 };"
+
+B.({} = [true, false])
+
+C.({} = 'abc')
+
+D.{} = []
+
+36.在es6中，下面export default const b = 1;书写正确
+正确答案：B
+
+A 对	B 错
+
+37."在es6中，export default命令用在非匿名函数前；
+
+知识点：es6中的模块引入与抛出；来源：自出"
+正确答案：A
+
+A 对	B 错
+
+38."在es6中，export default命令用于指定模块的默认输出。显然，一个模块只能有一个默认输出；
+知识点：es6中的模块引入与抛出；来源：练习手册第6单元"
+正确答案：A
+
+A 对	B 错
+
+39."在es6中，多次重复执行同一句import语句，会执行多次。
+知识点：es6中的模块引入与抛出；来源：自出"
+正确答案：B
+
+A 对	B 错
+
+40."如果在一个js文件中，通过export const name=“1”抛出了name属性，在引入文件时，我们需要将name变为title，代码书写import {name as title} from ""./a.js"""
+正确答案：A
+
+A 对	B 错
+
+

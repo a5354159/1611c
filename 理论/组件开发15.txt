@@ -1,0 +1,203 @@
+在vue中，指令的钩子函数中，发生在更新阶段的钩子函数有                  知识点：vue指令；来源：练习手册第15单元      
+正确答案：update、componentUpdated
+
+在vue中，正确定义一条指令，可以实现input框中，输入值为number类型的校验                      知识点：vue指令；来源：练习手册第15单元       							"Vue.directive('test', function (el, binding) {
+正确答案：  if(typeOf(binding.value)!==number){
+   alert(""格式不对"")
+  }
+})
+
+在vue中，指令钩子函数中，有哪些钩子函数可以接受到oldVnode这个参数  知识点：vue指令；来源：练习手册第15单元       "	
+正确答案：update，componentUpdated
+
+v-my-directive.name:age=""1 + 1""  如上述指令，如果我们打印，binding.expression得到的结果是：              知识点：vue指令；来源：练习手册第15单元       "	
+正确答案："1 + 1"
+
+在vue的指令中，如果我们获取绑定的当前元素，用哪个参数：                        知识点：vue指令；来源：练习手册第15单元     
+正确答案：el
+
+在vue的指令中，必须再自定义的指令名字前面加	
+正确答案：v-
+
+vue的指令在使用之前是否需要注册		
+正确答案：是
+
+vue的指令解决了什么问题		
+正确答案：dom公共逻辑的封装
+
+vue指令全局注册时的方法是
+正确答案：vue.directive()
+
+vue指令全局注册时接受的第一个参数	
+正确答案：指令的命名
+
+v-my-directive.name:age=""1 + 1""   如上述指令，如果我们打印，binding.value得到的结果是                               知识点：vue指令；来源：练习手册第15单元      
+1	
+2	
+undefined	
+都不对			
+B
+
+在vue中，指令的钩子函数中，哪个钩子函数是在指令与dom元素解绑时调用的                 知识点：vue指令；来源：练习手册第15单元       	
+once	
+unbind	
+bind	
+都不对			
+B
+
+在vue中，对div正确的进行绑定一个指令，并且传入参数1，正确书写代码                          知识点：vue指令；来源：练习手册第15单元  
+<div v-my-directive:1></div>	
+<div my-directive:1></div>	
+<div @my-directive:1></div>	
+都不对			
+A
+
+在vue关于指令的说法正确的是： 知识点：vue组件；来源：网络"	
+只能在全局进行注册	
+只能在组件内部进行注册	
+只能在实例内部进行注册	
+既可以在全局注册，也可以在局部进行注册			
+D
+
+"在vue中哪个组件是用来动态渲染组件的  知识点：vue组件；来源：练习手册第14单元"	
+component	
+transition	
+transition-group	
+group			
+A
+
+在vue的keep-alive组件哪个属性字符串或正则表达式。只有匹配的组件会被缓存	
+all	
+include	
+exclude 	
+都不对			
+B
+
+不属于vue内置组件的有：	
+component	
+group	
+transition	
+transition-group			
+B
+
+()组件作为多个元素/组件的过渡效果	
+keep-alive	
+<transition-group>	
+slot	
+都不对			
+B
+
+在vue指令在全局注册时需要注入几个参数	
+1	
+0	
+2	
+3			
+B
+
+vue的自定义指令初次挂载的钩子函数是	
+bind	
+created	
+once	
+都不对			
+A
+
+vue在组件内部定义指令的属性是	
+components	
+directives 	
+define	
+都不对			
+B
+
+如果我们在开发过程中出现公用dom操作逻辑，在vue中我们应该用什么解决	
+组件	
+指令	
+函数	
+数据			
+B
+
+在vue的指令中，只背调用一次的钩子函数有	
+bind	
+update	
+once	
+都不对			
+A
+
+vue的指令中 被绑定元素插入父节点时调用的钩子函数是	
+insertd	
+bind	
+mounted	
+都不对			
+A
+
+vue中当指令解绑时执行的钩子函数是	
+unbind 	
+unmount	
+created	
+bind			
+A
+
+所在组件的 VNode 更新时调用，但是可能发生在其孩子的 VNode 更新之前的指令钩子函数是	
+once	
+componentUpdated	
+update 	
+go			
+C
+
+在vue中,属于vue的binding对象属性的有        知识点：vue组件；来源：网络	
+name	
+expression	
+value	
+art			
+ABC
+
+在vue的bind钩子函数中可以接受到的参数有     知识点：vue组件；来源：网络	
+el	
+binding	
+vnode	
+oldVnode			
+ABC
+
+
+属于vue的特性的有	
+实现dom公用逻辑封装	
+实现dom与逻辑的解耦	
+是的组件更加纯粹	
+都不对			
+ABC
+
+vue中指令接收的值的类型有	 
+动态数据属性	
+js对象	
+三元表达式	
+字符串			
+ABCD
+
+vue指令binding参数的arg属性表示指令值得表达式   知识点：vue组件；来源：网络"		
+B
+
+在vue中指令和组件进行了分离，不同于angular中的指令   知识点：vue组件；来源：网络"  
+A
+
+vue中unbind指令只有在指令和dom解绑时进行调用      知识点：vue组件；来源：练习手册第14单元	
+A
+
+vue中的指令不仅可以操作dom还可以请求数据	
+B
+
+指令是用以改写某个组件的默认行为	
+A
+
+vue组件的data属性是一个函数，然后抛出对象，是为了解决对同一对象的引用问题	
+A
+
+在vue中的vnode是用来获取vue编译生成的虚拟节点	
+A
+
+在vue中指令和组件进行了分离，不同于angular中的指令
+A
+
+vue指令的参数中modifiers: 一个包含修饰符的对象	
+A
+
+vue指令的参数中expression: 一个包含修饰符的对象	
+B

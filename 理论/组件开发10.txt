@@ -1,0 +1,202 @@
+"export default {
+  
+ name: 'head',
+  
+ data () {
+   
+   return {
+        
+   username:""张三""
+    
+  }
+  
+ },
+    
+
+}
+补全上述代码，在当前组件配置对象中添加一个数据属性msg，msg的值跟随username的值改变而改变，实现如下这种数据格式：""姓名：张三""，当username变成""李四""时，则变成""姓名：李四"""							"computed: {
+ 答案：   
+    msg: function () {
+      return ""姓名：""+this.username
+    }
+  }"
+在vue的computed属性中，提供了哪两个方法供使用		
+ 答案：get，set
+在es6如果默认抛出一个模块使用：	
+ 答案：export default
+"用vue的指令给div元素添加color: activeColor, fontSize: fontSize + 'px'两个样式：
+代码实现：
+ 答案：<div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+"（）属性可以提供一个函数，对当前数据有依赖的所有数据进行更新
+ 答案：watch
+"在vue中，配置项中属于计算的的属性是 知识点：vue计算属性；来源：练习手册第10单元
+ 答案：computed
+"在vue中，computed默认为（）读取数据知识点：vue计算属性；来源：练习手册第10单元"
+ 答案：getter
+"vue中，内联样式可以用（）的语法将多个样式对象应用到一个元素上 知识点：vue计算属性；来源：练习手册第10单元"	
+ 答案：数组
+"在vue中，（）属性可以提供一个函数对当前对此数据有依赖的所有数据进行更新 知识点：vue基础知识点；来源：练习手册第9单元"	
+ 答案：watch
+"通过vue实例的（）属性可以获取到当前实例挂载的dom节点知识点：vue计算属性；来源：练习手册第10单元"	
+ 答案：$el
+内联样式可以用（）数据类型或数据格式将多个样式对象应用到一个元素上
+
+数组加对象	
+数组	
+对象	
+都不对			
+B
+
+在vue的computed属性中对数据劫持操作的两个方法地层实际为Object的（）方法中的	
+Object.keys	"
+Object.defineProperty	
+Object.assign	都不对			
+B
+
+关于computed属性说法正确的是：	"
+computed默认只有get属性，不可以提供一个set；
+computed默认只有get属性，也可以提供一个set；	
+computed默认只有set属性，不可以提供一个geT	
+computed默认只有get属性，不可以提供一个set			
+B
+
+computed与watch的区别说法正确的是：	
+computed监听的是属性名同名的数据	
+watch监听的是函数内部依赖的数据	
+computed监听的是函数内部依赖的数据	
+computed的属性函数无需进行return返回			
+C
+
+vue中的computed属性中配置属性名，后面直接跟函数代表	
+setter	
+watch	
+getter	
+dest			
+C
+
+在vue中关于添加样式说法正确的是	
+class类名的添加只可以为{}格式	
+class类名的添加只可以为[]格式	
+class类名的添加既可以为{}格式，也可为[]格式	
+以上说法都不正确			
+C
+
+关于内联样式的说法正确的是	
+以下都对	
+不可以动态解析变量	
+只可以动态解析字符串	
+可以为对象或者数组格式  			
+D
+
+在vue中关于class动态绑定数据的写法正确的有	
+以下说法都不对	
+<div v-bind:class="classObject"></div>	
+<div @class="classObject"></div>	
+只可以动态解析数值			
+B
+"关于，对vue实例对象改变数据需要使用（）方法 知识点：vue计算属性；来源：练习手册第10单元
+$get	
+$push	
+$set	
+$append			
+C
+
+"在vue中，进行一次性插值，当数据改变时，内容不会更新的指令是（） 知识点：vue计算属性；来源：练习手册第10单元"	
+v-text	
+v-once	
+v-on	
+v-bind			
+B
+
+"在vue中，computed属性中配置属性名，后面直接跟函数代表知识点：vue计算属性；来源：练习手册第10单元"	
+setter	
+adder	
+getter	
+都不对			
+C
+
+"关于computed属性说法正确的是知识点：vue计算属性；来源：练习手册第10单元
+computed默认只有getter属性，不可以提供一个setter；	
+computed默认只有getter属性，也可以提供一个setter；	
+computed默认只有setter属性，不可以提供一个getter	
+computed默认只有getter属性，不可以提供一个setter			
+B
+
+"在vue中,关于computed与watch的区别说法正确的是知识点：vue计算属性；来源：练习手册第10单元"	
+computed监听的是属性名同名的数据	
+watch监听的是函数内部依赖的数据	
+computed监听的是函数内部依赖的数据	
+computed的属性函数无需进行return返回			
+C
+
+"vue中，关于class名进行动态赋值的写法正确的是知识点：vue计算属性；来源：练习手册第10单元"	
+<div v-bind:class="{ active: isActive }"></div>	
+<div @:class="{ active: isActive }"></div>	
+<div v-html:class="{ active: isActive }"></div>	
+<div v-text:class="{ active: isActive }"></div>			
+A
+
+"在vue中,关于class类名动态绑定对象的写法正确的有知识点：vue计算属性；来源：练习手册第10单元"	
+<div @class="classObject"></div>	
+<div #class="classObject"></div>	
+<div &class="classObject"></div>	
+<div :class="classObject"></div>			
+D
+
+"（网站工程）在vue中,关于class类名的数组语法写法正确的有：知识点：vue计算属性；来源：练习手册第10单元
+<div &:class="[activeClass : '', errorClass]">	
+<div @:class="[activeClass : '', errorClass]">	
+<div v-bind:class="[activeClass : '', errorClass]">	
+<div :class="[activeClass, errorClass]">			
+D
+
+
+在vue中可以对数据进行监听的有哪些属性	
+computed	
+watch	
+mounted	
+只可以动态解析数值			
+AB
+
+关于class类名动态绑定对象的写法正确的有	"
+<div @class=""classObject""></div>
+<div #class="classObject"></div>	
+<div v-bind:class="classObject"></div>	
+只可以动态解析数值			
+CD
+
+"下面数组的解构使用默认值的是（）：知识点：vue计算属性；来源：练习手册第10单元"	 
+let [x,y=0]=[1,null]	
+let [x, y = 'b'] = ['a'];	
+let [x, y = 'b'] = ['a', undefined];	
+let [x,y=0]=[1,""]			
+BC
+
+"在vue中,关于class动态绑定数据的写法正确的有知识点：vue计算属性；来源：练习手册第10单元"	
+<div v-bind:class="{ a:isActive }"></div>	
+<div v-bind:class="classObject"></div>	
+<div @class="classObject"></div>	
+<div &class="classObject"></div>			
+AB
+
+computed 计算属性只有在相关的数据发生变化时才会改变要计算的属性，当相关数据没有变化是，它会读取缓存
+A
+当 v-bind:style 使用需要特定前缀的 CSS 属性时，如 transform ，Vue.js 会自动侦测并添加相应的前缀。
+A
+在vue中不推荐使用computed进行数据的观察	
+B
+在vue我们可以使用watch和compouted进行数据的监听
+A
+vue中的computed默认为getter读取数据
+A
+
+"用methods属性结合方法可以达到computed属性的功能  知识点：vue计算属性；来源：练习手册第10单元
+A
+"watch属性可以提供一个函数对当前对此数据有依赖的所有数据进行更新知识点：vue计算属性；来源：练习手册第10单元
+A
+"vue中，当 v-bind:style 使用需要特定前缀的 CSS 属性时，如 transform ，Vue.js 会自动侦测并添加相应的前缀。知识点：vue计算属性；来源：练习手册第10单元"	
+A
+"关于vue内联样式的写法是<div v-bind:style=""{ color: activeColor, fontSize: fontSize + 'px' }""></div>知识点：vue计算属性；来源：练习手册第10单元"	
+A
+"关于内联样式的说法可以动态解析变量：知识点：vue计算属性；来源：练习手册第10单元"
+A

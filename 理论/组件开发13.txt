@@ -1,0 +1,320 @@
+1、"vue的子组件获取父组件数据是需要用哪个属性来显式的声明
+  props
+
+2、"在vue的组件内部进行组件定义的属性是
+"components
+
+3、"vue中父组件是否可以直接获取子组件中的数据
+ 是
+
+4、"在vue中默认的数据流是（）
+ 单向数据流
+
+5、"在vue中是否可以对外部传入的值进行类型的检验
+ 是
+
+6、"在vue的组件中数据中维护内部状态的是
+ 
+A:data
+
+B:props
+
+C:state
+
+D:都不对
+正确答案：A
+
+7、"在vue的组件中进行组件接受的外部数据是
+ 
+A:data
+
+B:state
+
+C:props
+
+D:都不对
+正确答案：C
+
+8、"在vue中不属于vue的props验证类型的有
+ 知识点：vue组件；来源：练习手册第13单元"
+A:Function
+
+B:Object
+
+C:map
+
+D:Boolean
+正确答案：C
+
+9、"现在有一个组件comp，comp的template如下:
+
+   <input type=""text"" class=""red""/>
+
+  将此组件渲染在另外一个组件中写法如下：
+
+   <comp type=""number"" class=""aa""></comp>
+
+  下面说法正确的是：
+
+
+A: 渲染结果为<input type="text" class="red aa"/>
+
+B:渲染结果为<input type="number" class="red"/>
+
+C:渲染结果为<input type="number" class="red aa"/>
+
+D:渲染结果为<input type="text" class="aa"/>
+正确答案：C
+
+10、"在vue中,关于vue2中数据流的说法正确的是
+ 
+A:单向数据流，父组件传到子组件
+
+B:单向数据流，子组件传到父组件
+
+C:双向数据流，父组件和子组件之间可以进行数据的相互传递
+
+D:无法产生数据流
+正确答案：A
+
+11、"在vue中,向vue的子组件中传递一个数值的写法正确的是
+ 知识点：vue组件；来源：练习手册第13单元"
+A:<comp some-prop="1"></comp>
+
+B:<comp :some-prop="1"></comp>
+
+C:<comp some-prop="{1}"></comp>
+
+D:<comp some-prop="[1]"></comp>
+正确答案：B
+
+12、"在vue中向子组件传递传递数据时的支持Message大写的写法正确的是
+ 知识点：vue组件；来源：练习手册第13单元"
+A:<child myMessage="hello!"></child>
+
+B:<child my-message="hello!"></child>
+
+C:<child （my-message）="hello!"></child>
+
+D:<child  :myMessage="hello!"></child>
+正确答案：B
+
+13、"在vue组件中data属性值书写正确的是
+ 知识点：vue组件；来源：练习手册第13单元"
+A:"data: {
+    message: 'hello'
+  }"
+
+B:"data:function () {
+    return {
+     message: 'hello'
+    }
+  } "
+
+C:"data:function () {
+    {
+     message: 'hello'
+    }
+  } "
+
+D:"data:function () {
+    
+     message: 'hello'
+    
+  } "
+正确答案：B
+
+14、关于vue组件的说法正确的是    
+A:组件的data属性可以为{}
+
+B:组件的data属性可以为[]
+
+C:组件的data属性只可以为function
+
+D:组件的data属性进行数据拷贝时，进行是浅拷贝
+正确答案：CD
+
+15、在vue中对于传入组件内部的数据进行更改时使用方式有          
+A:在data中重新将值赋给另外一个属性
+
+B:在computed中动态的赋给另外一个属性
+
+C:直接对props传入的值进行改变
+
+D:直接在mounted钩子函数中将其赋给另外一个属性
+正确答案：AB
+
+16、get请求时缓存处理解决方法不对的是:  
+A:在url后面添加时间戳
+
+B:以上都不正确
+
+C:利用XMLHttpRequest对象的setRequestHeader函数来设置If-Modified-Since的值为0
+
+D:在url后面添加一个随机数
+正确答案：B
+
+17、vue中父组件可以直接获取子组件中的数据    
+正确答案：B
+
+18、vue的非prop属性，存在属性的替换和覆盖等特性    
+正确答案：A
+
+19、在vue中如果对props做验证，props的属性值格式必须为对象格式       
+正确答案：A
+
+20、"在vue中对组件只可以进行局部注册
+ 
+正确答案：B
+
+21、在vue中注册一个test-component全局的组件写法正确"Vue.component('my-component', {
+    // 选项
+  })"
+
+22、在vue组件的data属性值中，正确的书写一段代码定义name，值为“张三”"data:function () {
+ return {
+ message: 'hello'
+ }
+} "
+
+23、"补全下面代码，在实例化vue时实现局部注册组件：
+
+var Child = {
+  template: '<div>A custom component!</div>'
+}
+
+new Vue({
+  
+  
+})"
+"components: {
+ 'my-component': Child
+}"
+
+24、如果在vue的table中渲染一个rows组件时，该怎么进行书写"<table>
+  <tr is=""rows""></tr>
+</table>"
+
+25、"Vue.component('child', {
+  props: ['myMessage'],
+  template: '<span>{{ myMessage }}</span>'
+})
+如果在页面使用<child></child>时，想要输入到子组件的myMessage的值为“张三”，
+使用代码实现："
+<child my-message="张三"></child>
+
+26、vue推行（）式开发的思想
+A:组件式
+
+B:函数式
+
+C:面向对象
+
+D:都对
+正确答案：A
+
+27、关于组件式开发，一个组件包括
+A:样式
+
+B：结构
+
+C:逻辑
+
+D:都不对
+正确答案：D
+
+28、在vue组件中是（）的数据绑定的
+A:单向的
+
+B：双向的
+
+C：全局的
+
+D:都不对
+正确答案：A
+
+29、在vue中不支持的props验证类型有
+A:String
+
+B:Number
+
+C:set
+
+D：Symbol
+正确答案：C
+
+30、在vue的组件中除了在data中可以定义数据字段，还可以在哪里定义
+A:computed
+
+B:watch
+
+C:created
+
+D:都不对
+正确答案：A
+
+31、在vue的组件中，关于说法正确的是 
+A:既可以局部注册，又可以全局注册
+
+B：只可以局部注册
+
+C：只可以全局注册
+
+D:可以在实例后进行组件的全局注册
+正确答案：A
+
+32、关于vue中的组件说法正确的有
+A:组件可以在实例后进行注册
+
+B:组件不可以在组件内部注册
+
+C:全局组件的注册必须放在实例之前
+
+D:组件的命名必须遵循w3c规则
+正确答案：C
+
+33、不属于vue的props验证类型的有
+A:Function
+
+B:Object
+
+C:map
+
+D:Boolean
+正确答案：C
+
+34、下列说法，属于vue组件正确说法的有：
+A;组件的data属性可以为{}
+
+B:组件的data属性可以为[]
+
+C:组件的data属性只可以为function
+
+D:组件的data属性进行数据拷贝时，进行是浅拷贝
+正确答案：CD
+
+35、在以下情况中，请使用 POST 请求
+A：以上都不正确
+
+B:无法使用缓存文件
+
+C:发送包含未知字符的用户输入时，POST 比 GET 更稳定也更可靠
+
+D:向服务器发送少量量数据
+正确答案：BC
+
+36、"在vue的data属性中对于一个引用类型的数据进行引用，数据是进行的浅拷贝  
+"
+正确答案：A
+
+37、在vue中无法进行组件间的中数据通信；
+正确答案：B
+
+38、在vue中props的验证类型有Symbol类型
+正确答案：A
+
+39、在vue中对于传入组件内部的数据进行更改时使用方式有在data中重新将值赋给另外一个属性
+正确答案：A
+
+40、get请求时缓存处理解决方法:在url后面添加时间戳
+正确答案：A

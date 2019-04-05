@@ -1,0 +1,203 @@
+1.<main>
+ <p v-for="(index,i) in 1">{{index}}</p>
+   </main>
+  执行上面代码，会渲染出的数据是  （1）
+
+2.写出三个vue中数组的push方法被称作（）方法         变异方法
+
+3.在vue中使用v-if进行条件渲染，切换时需要切换多个元素//当前条件为state=true时显示：
+
+<div>明天</div>
+
+<div>周四</div>
+
+//当前条件为state=false时显示：
+
+<div>今天</div>
+
+<div>周三</div>
+
+用代码实现       
+
+ 答案：<template v-if="state">
+   <div>明天</div>
+
+  <div>周四</div>
+</template>
+<template v-else>
+  <div>今天</div>
+
+  <div>周三</div>
+</template>
+
+4.在vue中实现条件判断时，如果想要提高后续渲染速度时，建议使用（v-show）
+
+5.vue中哪些数据结构可以使用v-for遍历（布尔，数值，对象，数组）
+
+6.在vue中可以使用（）属性来防止元素的复用（A）
+A.key
+B.props
+C.ref
+D.都不对
+
+7.在vue中哪些指令不属于条件渲染指令(D)
+A.v-if
+B.v-else
+C.v-else-if
+D.v-for
+
+8.在vue中实现条件判断时，如果想要提高首次渲染速度时，建议使用(A)
+A.v-if
+B.v-show
+C.v-display
+D.都不对
+
+9.在vue中v-for指令遍历对象时，最后一个参数为(B)
+A.渲染项
+B.索引
+C.key值
+D.都不对
+
+10.在vue中更新渲染列表时，默认使用（C）策略
+A.自动生成
+B.销毁创建
+C.“就地复用”
+D.都不对
+
+11.关于v-if与v-for说法正确的是(C)
+A.当 v-if 与 v-for 一起使用时，v-if 具有比 v-for 更高的优先级
+B.v-if与v-for不可以一起使用
+C.当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级
+D.v-show与v-for一起使用时，v-show优先级更高
+
+12.关于v-for指令说法正确的有(C)
+A.v-for只可以渲染数组
+B.v-for只可以渲染对象
+C.v-for既可以渲染数组，也可以渲染对象
+D.v-for无法直接对数值进行遍历
+
+13.关于v-for遍历数组时的参数说法正确的有(D)
+A.v-for只能接受一个参数
+B.v-for第一个参数为当前项的索引
+C.v-for第二个参数为当前项
+D.v-for第二个参数为当前项的索引
+
+14.v-for可以遍历的数据结构有（BCD）
+A.布尔
+B.数值
+C.对象
+D.数组
+
+15.v-for遍历对象时的参数说法正确的(ABC)
+A.第一个参数为value
+B.第二个参数为key
+C.第三个参数为index
+D.第一个参数为index
+
+16.在vue中，key属性只能结合v-for来使用，否则将无法使用   B
+
+17.在vue中v-for指令遍历对象时，最后一个参数为索引    A
+
+18.在vue的中v-for指令属于条件指令		B
+
+19.push属于vue中数组的变异方法	A
+
+20.v-for会依次将template标签中dom结构渲染到页面中		A
+
+21.v-for是否可以遍历数值
+ 知识点：vue渲染指令；来源：练习手册第11单元      是
+
+22.vue中，vue的v-for指令是否可以搭配of来使用
+ 知识点：vue渲染指令；来源：练习手册第11单元		是
+
+23.在vue中，（）属性只能结合v-for来使用，否则将无法使用
+ 知识点：vue渲染指令；来源：练习手册第11单元		key
+
+24.在vue中，更新渲染列表时，默认使用（）策略
+  知识点：vue渲染指令；来源：练习手册第11单元		“就地复用”
+
+25.在vue中，哪些指令属于条件渲染指令
+  知识点：vue渲染指令；来源：练习手册第11单元		v-if,v-else,v-else-if
+
+26.在vue中,常用的指令有哪些
+知识点：vue渲染指令；来源：练习手册第11单元  (C)
+A.v-click
+B.v-method 
+C.v-bind
+D.v-to
+
+27.在vue中,属于给属性动态绑定数据变量的是：
+知识点：vue渲染指令；来源：练习手册第11单元   (A)
+A.v-bin
+B.v-text
+C.v-on
+D.v-click
+
+
+28.vue中，v-if和v-show的区别是
+知识点：vue渲染指令；来源：练习手册第11单元   (A)
+A. v-if 是“真正的”条件渲染，因为它会确保在切换过程中条件块内的事件监听器和子组件适当地被销毁和重建
+B.v-if不管初始条件是什么，元素总是会被渲染，并且只是简单地基于 CSS 进行切换
+C. v-if 有更高的初始渲染开销
+D.v-show 有更高的切换开销
+
+29.在vue中,关于v-if与v-for说法正确的是
+知识点：vue渲染指令；来源：练习手册第11单元   (C)
+A.当 v-if 与 v-for 一起使用时，v-if 具有比 v-for 更高的优先级
+B.v-if与v-for不可以一起使用
+C.当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级
+D.v-show与v-for一起使用时，v-show优先级更高
+
+30.在vue中,关于v-for指令说法正确的
+知识点：vue渲染指令；来源：练习手册第11单元   (C)
+A.v-for只可以渲染数组
+B.v-for只可以渲染对象
+C.v-for既可以渲染数组，也可以渲染对象
+D.v-for无法直接对数值进行遍历
+
+31.关于VUE中我们用来遍历渲染的指令是  (B)
+A.v-bind
+B.v-for
+C.v-if
+D.v-show
+
+32.在vue中属于给属性动态绑定数据变量的是： (A)
+A.v-bind
+B.v-text
+C.v-on
+D.v-click
+33.<ul>
+ <li v-for="(index,i) in 3">{{index}}</li>
+   </ul>
+  执行上面代码，会渲染出的数据是  (B)
+A.0，1，2
+B.1，2，3
+C.0，0，0
+D.undefined，undefined，undefined
+
+34.在vue中，带有v-for的<template>标签来渲染多个元素块的说法不正确的有
+知识点：vue渲染指令；来源：练习手册第11单元    (ACD)
+A.v-for不支持此种写法
+B.v-for会将template标签渲染到页面中
+C.v-for会依次将template标签中dom结构渲染到页面中
+D.v-for只会将template中dom结构渲染一次
+
+35.vue中，属于数组变异方法的有
+知识点：vue渲染指令；来源：练习手册第11单元   (ABCD)
+A.push()
+B.shift()
+C.splice()
+D.reverse()
+
+36.在vue中的数据过滤通常结合computed属性来实现
+知识点：vue渲染指令；来源：练习手册第11单元       A
+
+37. v-for第二个参数为当前项的索引
+知识点：vue渲染指令；来源：练习手册第11单元      A
+
+38.当 v-if 与 v-for 一起使用时，v-for 具有比 v-if 更高的优先级             
+知识点：vue渲染指令；来源：练习手册第11单元		A
+
+39.vue的v-for指令不可以搭配of来使用		B
+
+40.在vue的指令中不可以实现遍历			B
