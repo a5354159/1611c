@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <h3>1611C</h3>
+        <my-header />
+        <my-header></my-header>
+        <my-header></my-header>
+    </div>
+    <!-- <div id="wrap">
+        <my-header></my-header>
+    </div> -->
+    <!-- <template id="list">
+        
+    </template> -->
+</body>
+<script type="text/x-template" id="list">
+    <div>
+        {{title}}<span>下雨了</span>{{count}}
+        <button @click="count++">点击</button>
+        <img :src="item" alt="" v-for="item in imgs" :style="style">
+    </div>
+</script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+<script>
+    // Vue.component('my-header', {
+    //     template: `<div>{{title}}</div>`,
+    //     data() { //组件里面的data，是一个函数，并且函数里面需要返回一个对象
+    //         return {
+    //             title: '周一'
+    //         }
+    //     }
+    // });
+    //组件里面一定要有template这个字段
+    new Vue({
+        el: '#app',
+        data: {
+
+        },
+        components: { //局部注册只能在当前实例里面使用
+            myHeader: {
+                template: '#list',
+                data() {
+                    return {
+                        title: '周一',
+                        count: 1,
+                        style: {
+                            height: '100px',
+                            width: '100px',
+                            display: 'inline-block'
+                        },
+                        imgs: ['http://www.pptbz.com/pptpic/UploadFiles_6909/201203/2012031220134655.jpg', 'http://pic29.nipic.com/20130601/12122227_123051482000_2.jpg', 'http://uploads.oh100.com/allimg/1709/117-1FZ5102542-52.jpg']
+                    }
+                }
+            }
+        }
+
+    });
+
+    // new Vue({
+    //     el: '#wrap'
+    // });
+</script>
+
+</html>

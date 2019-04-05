@@ -1,0 +1,21 @@
+[{
+    "title": "二维码",
+    "phone": "-",
+    "content": "http://www.baidu.com",
+    "icon": "code"
+}, {
+    "title": "返回顶部",
+    "phone": "-",
+    "content": "返回顶部",
+    "icon": "top"
+}, {
+    "title": "电话",
+    "phone": "电话号码...",
+    "content": "-",
+    "icon": "phone"
+}, {
+    "title": "地址",
+    "phone": "-",
+    "content": "count-us",
+    "icon": "address"
+}]
