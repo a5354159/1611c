@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //作业一
+        //1.完成函数 centerPad 可以让一个字符串居中包裹在指定的可重复填充的字符串中间，
+        // 第一个参数为被包裹字符串，第二个参数为最终的字符串长度，第三个参数为用来填充的字符。
+        // 如果字符串无法完全居中，那么让字符串偏左
+        // 如果第二个参数传入的字符串长度比原来长度要短，直接返回原有字符串即可
+        function centerPad(str, len, ns) {
+            let strlen = str.length;
+            return len < strlen ? str : str.padStart(Math.floor((len / strlen) / 2) + strlen, ns).padEnd(len, ns)
+        }
+
+        console.log(centerPad('Hello', 50, 'abc'))
+
+        //作业二
+        // 同字母异序指的是两个字符串字母种类和字母的数量相同， 但是顺序可能不同。
+        // 完成 isAnagram， 接受两个字符串作为参数， 返回true 或者 false 表示这两个字符串是否同字母异序。 例如
+        function isAnagram(str1, str2) {
+            return str1.split('').sort().join('') === str2.split('').sort().join('')
+
+        }
+        console.log(isAnagram("anagram", "nagaram")) // => return true.
+        console.log(isAnagram("rat", "car")) // => return false.
+    </script>
+</body>
+
+</html>

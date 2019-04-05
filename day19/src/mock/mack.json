@@ -1,0 +1,44 @@
+[{
+    "title": "本周特价",
+    "cont": [{
+        "img": "../static/pic2.png",
+        "txt": "麻辣烫",
+        "tlt": 122,
+        "id": 1
+    }, {
+        "img": "../static/pic3.png",
+        "txt": "火烧",
+        "tlt": 17,
+        "id": 2
+    }, {
+        "img": "../static/pic1.png",
+        "txt": "麻辣鱼",
+        "tlt": 18,
+        "id": 3
+    }, {
+        "img": "../static/pic2.png",
+        "txt": "土豆",
+        "tlt": 126,
+        "id": 4
+    }, {
+        "img": "../static/pic3.png",
+        "txt": "商品天香卤香鸡烝20g",
+        "tlt": 3,
+        "id": 5
+    }, {
+        "img": "../static/pic1.png",
+        "txt": "小鸡腿（原味）42g",
+        "tlt": 3.5,
+        "id": 6
+    }, {
+        "img": "../static/pic2.png",
+        "txt": "蜂蜜",
+        "tlt": 28,
+        "id": 7
+    }, {
+        "img": "../static/pic3.png",
+        "txt": "肉丝",
+        "tlt": 13,
+        "id": 8
+    }]
+}]

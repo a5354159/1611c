@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <p>次数{count}</p>
+    </div>
+    <div id="add">+</div>
+</body>
+<script>
+    let data = {
+        count: 1
+    }
+    add.onclick = function() {
+        return data.count++;
+        console.log(data.count)
+    }
+    views(data, '#box');
+
+    function views(data, parent) {
+        let ele = document.querySelector(parent);
+        let content = ele.innerHTML;
+        console.log(ele, content.replace('count', data.count));
+        Object.defineProperty(data, 'count', {
+            get() {
+
+            },
+            set(val) {
+                console.log(val)
+            }
+        })
+    }
+</script>
+
+</html>

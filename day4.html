@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        text-decoration: none;
+    }
+    
+    .main {
+        width: 200px;
+        height: 200px;
+        border: 1px solid #ccc;
+        text-align: center;
+        box-sizing: border-box;
+        /* display: flex; */
+        /* flex-direction: column-reverse */
+    }
+    
+    .btns {
+        display: flex;
+        height: 50px;
+        align-items: center;
+        line-height: 50px;
+        margin-top: 90px;
+    }
+</style>
+
+<body>
+    <div class="main">
+        <div class="btns">
+        </div>
+    </div>
+    <script>
+        class A {
+            constructor(obj) {
+                this.el = obj.el;
+                this.data = obj.data;
+                this.wrap = this.creatBox(this.el)
+                this.btns = this.creatBox('.btns', this.wrap)
+                this.init();
+            }
+            init() {
+                this.getCreatElement()
+            }
+
+
+            getCreatElement() {
+                let h4 = this.creatElement('h4', {
+                        style: 'width:100%;background:#f0f;color:#fff;'
+                    },
+                    this.data.map(item => {
+                        return item.tit
+                    }).join('')
+                )
+                this.wrap.insertBefore(h4, this.btns)
+                let p = this.creatElement('p', {
+                        style: 'width:100%;height:50px;'
+                    },
+                    this.data.map(item => {
+                        return item.content
+                    }).join('')
+                )
+                this.wrap.insertBefore(p, this.btns)
+                this.data.forEach((elemt) => {
+                    elemt.status.map((item) => {
+                        let btn = this.creatElement('button', {
+                                style: 'flex:1'
+                            },
+                            item
+                        )
+                        this.btns.append(btn)
+                    }).join()
+                })
+
+            }
+            creatElement(dom, style, text = 'hello') {
+                let ele = document.createElement(dom);
+                ele.setAttribute(Object.keys(style), Object.values(style))
+                ele.innerHTML = text;
+                return ele;
+            }
+            creatBox(dom, parent = document) {
+                return typeof dom === 'string' ? parent.querySelector(dom) : dom
+            }
+        }
+
+        new A({
+            el: '.main',
+            data: [{
+                tit: '静态窗口',
+                content: '这是一个父元素窗口',
+                status: ['删除', '取消']
+            }]
+        })
+    </script>
+</body>
+
+</html

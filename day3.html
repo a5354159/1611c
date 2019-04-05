@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    const car = [{
+        groupName: '水果',
+        type: [{
+            name: '苹果',
+            price: 10
+        }, {
+            name: '橘子',
+            price: 40
+        }, {
+            name: '香蕉',
+            price: 90
+        }]
+    }, {
+        groupName: '蔬菜',
+        type: [{
+            name: '芹菜',
+            price: 10
+        }, {
+            name: '菠菜',
+            price: 15
+        }, {
+            name: '土豆',
+            price: 8
+        }]
+    }];
+    //     根据上述数据，编写一个函数，该函数(computedPrice)接收上述的数据作为参数，返回一个对象，请输入用数组的reduce方法实现。对象的格式如下
+
+    // ```js
+    //        {
+    //             allPrice:所有商品的总价格,
+    //             group:[
+    //                 {
+    //                     typeName:'水果',
+    //                     price:所有水果的总价格
+    //                 },
+    //                 {
+    //                     typeName:'蔬菜',
+    //                     price:所有蔬菜的总价格
+    //                 }
+    //             ]
+    //         } 
+
+    function computedPrice(arr) {
+        let obj = {
+            allPrice: '所有商品的总价格',
+            group: []
+        }
+        arr.forEach(item => {
+            var o = {
+                typeName: item.groupName,
+                price: item.type.map(v => v.price).reduce((a, b) => a + b)
+            };
+            obj.group.push(o)
+        })
+        return obj
+    }
+    console.log(computedPrice(car))
+</script>
+
+</html>
